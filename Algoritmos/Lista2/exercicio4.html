@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite seu logradouro : <br> 
+    <input type="text" id="seuLogradouro"> <br> 
+    Digite o número do seu logradouro <br> 
+    <input type="number" id="numeroLogradouro"> <br> 
+    <div id="exibirLogradouro">
+
+    </div>
+    <div id="exibirNumeroLogradouro">
+
+    </div> 
+    <br>
+    <button onclick="Botão()">Onde eu moro</button>
+</body>
+</html>
+<script>
+    function Botão() {
+        var Logradouro= seuLogradouro.value 
+        var NumeroLogradouro= numeroLogradouro.value 
+
+        exibirLogradouro.innerHTML = `Seu logradouro é ${Logradouro}`
+        exibirNumeroLogradouro.innerHTML = `O número do seu logradouro é ${NumeroLogradouro}`
+    }
+</script>

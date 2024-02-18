@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Cidade Natal :
+    <input type="text" id="cidadenatal"> <br> 
+    Data Nascimento : 
+    <input type="date" id="datanascimento"> <br> 
+    <div id="exibir"></div>
+    <button onclick="BotãoCadastrar() ">Cadastrar</button>
+</body>
+</html>
+<script>
+    function BotãoCadastrar() {
+        var Cidade = cidadenatal.value 
+        var Nascimento =  datanascimento.value 
+
+        exibir.innerHTML= `Você nasceu em ${Cidade} e sua data de nascimento é ${Nascimento}`
+    }
+</script>

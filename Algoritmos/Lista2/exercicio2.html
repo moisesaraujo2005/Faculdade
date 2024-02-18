@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite seu peso corporal (kg) 
+    <input type="number" id="pesoCorporal"> <br> 
+    Digite sua altura (cm) 
+    <input type="number" id="alturaCorporal"> <br> 
+    <div id="exibir">
+        
+
+    </div>
+    <button onclick="BotãoResposta()">Fale comigo</button>    
+</body>
+</html>
+<script>
+    function BotãoResposta() {
+        var Peso= pesoCorporal.value 
+        var Altura= alturaCorporal.value 
+        
+        exibir.innerHTML=`Você tem ${Peso} KG e ${Altura} de altura em CM`
+    }
+</script>

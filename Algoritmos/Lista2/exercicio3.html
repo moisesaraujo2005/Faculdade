@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite seu time : <br>
+    <input type="text" id="seutime"> <br> 
+    Digite a quantidade de titulos do seu time: <br>
+    <input type="number" id="qtdTitulos"> <br> 
+    <div id="exibir">
+
+    </div>
+    <br>
+    <button onclick="BotãoExibir()">Amo meu time</button>
+</body>
+</html>
+<script>
+    function BotãoExibir(){
+        var Time= seutime.value
+        var Titulos = qtdTitulos.value 
+
+        exibir.innerHTML = `O time ${Time} tem ${Titulos} títulos`
+    }
+</script>
