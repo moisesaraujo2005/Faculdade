@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Nome aluno-->
+
+    Informe seu nome:
+    <input type="text" id="nome_aluno">
+
+    <!--Notas do aluno-->
+
+    Informe sua nota na continuada:
+    <input type="number" id="input_continuada">
+
+    Informe sua nota semestral:
+    <input type="number" id="input_semestral">
+
+    <!--Botão Média-->
+    <button onclick="botaomedia()">Aprovado ou não</button>
+</body>
+
+</html>
+<script>
+    /*Função média */
+
+    function botaomedia() {
+        var nomeAluno = nome_aluno.value
+        var notaContinuada = input_continuada.value
+        var notaSemestral = input_semestral.value
+        var média = (notaContinuada * 0.4) + (notaSemestral * 0.6)
+
+        alert(`"A média de ${nomeAluno} será de ${média}".`)
+    }
+</script>

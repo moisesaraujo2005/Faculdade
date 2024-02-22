@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Valor Passagem-->
+
+    Informe o valor da passagem :
+    <input type="number" id="passagem_valor">
+
+    <!--Quantas viagens-->
+    Informe a quantidade de viagens que irá fazer por mês:
+    <input type="number" id="qtd_viagens">
+
+    <!--Botão Economia-->
+    <button onclick="BotãoEconomia()">Ver economia</button>
+</body>
+
+</html>
+<script>
+    /*Função Economia*/
+
+    function BotãoEconomia() {
+        var passagem = passagem_valor.value
+        var qtdViagens = qtd_viagens.value
+        var passagemEstudante = passagem / 2
+        var economiaMensal = qtdViagens * passagemEstudante
+
+        alert(`"Você economizará R$${economiaMensal} por mês"`)
+    }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    Informe sua idade: <br>
+    <input type="number" id="input_idade"> <br> <br>
+
+    <!----- Botões Para o Usúario clicar -->
+    <button onclick="BotãoHomem()">Aposentadoria Homem:</button> <br> <br>
+    <button onclick="BotãoMulher()">Aposentadoria Mulher:</button>
+</body>
+
+</html>
+<script>
+    /* Função Homem */
+
+    function BotãoHomem() {
+        var idadeHomem = Number(input_idade.value)
+        var aposentadoriaHomem = 70 - idadeHomem
+        alert(`Você se aposentara em ${aposentadoriaHomem} anos`)
+    }
+
+    /*Função Mulher*/
+    function BotãoMulher() {
+        var idadeMulher = Number(input_idade.value)
+        var aposentadoriaMulher = 60 - idadeMulher
+        alert(`Você se aposentara em ${aposentadoriaMulher} anos`)
+    }
+</script>

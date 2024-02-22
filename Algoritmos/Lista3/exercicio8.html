@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Valor depositado-->
+
+    Informe o valor do depósito :
+    <input type="number" id="deposito_numero">
+
+    <!--Botões depositar/retirar-->
+    Retirar:
+    <button onclick="botaoRetirar()">Retirar:</button>
+
+    Depositar:
+    <button onclick="botaoDepositar()">Depositar:</button>
+</body>
+
+</html>
+<script>
+    /* Variaveis Global */
+
+    var deposito = Number(deposito_numero.value)
+    var saldoAtual = deposito
+
+    /*Função Retirar*/
+
+    function botaoRetirar() {
+
+        var deposito = deposito_numero.value
+        saldoAtual -= deposito
+        
+        alert(`- Retirada de R$${deposito} efetuada! Saldo atual: R$${saldoAtual}`)
+    }
+
+    /*Função Depositar*/
+
+    function botaoDepositar() {
+
+        var deposito = Number(deposito_numero.value)
+        saldoAtual += deposito
+
+        alert(` - Depósito de R$${deposito} efetuado! Saldo atual: R$${saldoAtual}`)
+    }
+</script>

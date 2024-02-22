@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Nome do guerreiro-->
+
+    Informe seu nome guerreiro! :
+    <input type="text" id="input_guerreiro">
+
+    <!--KI do guerreiro-->
+    Informe seu ki guerreiro!:
+    <input type="number" id="input_ki">
+
+    <!--Botão ki-->
+    <button onclick="BotãoKI()">"Ver ki em cada forma"</button>
+</body>
+
+</html>
+
+<script>
+    /*Função KI */
+
+    function BotãoKI() {
+        var nomeGuerreiro = input_guerreiro.value
+        var kiGuerreiro = input_ki.value
+
+        alert(`Olá ${nomeGuerreiro} seu ki é ${kiGuerreiro}`)
+        alert(`Olá ${nomeGuerreiro} seu ki é ${kiGuerreiro * 50} na forma Super Saiyajin`)
+        alert(`Olá ${nomeGuerreiro} seu ki é ${kiGuerreiro * 100} na forma Super Saiyajin 2`)
+    }
+</script>

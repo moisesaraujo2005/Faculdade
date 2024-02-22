@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Números solicitados-->
+
+    Informe um número :
+    <input type="number" id="primeiro_numero">
+
+    Informe um segundo número :
+    <input type="number" id="segundo_numero">
+
+    <!--Botão Soma-->
+    <button onclick="botaoSoma()">Calcular soma</button>
+
+    <!--Botão Subtração-->
+    <button onclick="botaoSubtração()">Calcular subtração</button>
+
+    <!--Botão Divisão-->
+    <button onclick="botaoDivisão()">Calcular divisão</button>
+
+    <!--Botão Multiplicação-->
+    <button onclick="botaoMultiplicação()">Calcular multiplicação--</button>
+</body>
+
+</html>
+<script>
+    /*Função Mátematica Somar */
+
+    function botaoSoma() {
+
+        var numeroUm = Number(primeiro_numero.value)
+        var numeroDois = Number(segundo_numero.value)
+        var contaSomar = numeroUm + numeroDois
+
+        alert(`${numeroUm} + ${numeroDois} = ${contaSomar}`)
+
+    }
+
+    /*Função Mátematica Subtração*/
+
+    function botaoSubtração() {
+        var numeroUm = primeiro_numero.value
+        var numeroDois = segundo_numero.value
+        var contaSubtração = numeroUm - numeroDois
+
+        alert(`${numeroUm} - ${numeroDois} = ${contaSubtração}`)
+    }
+
+    /*Função Mátematica Divisão*/
+
+    function botaoDivisão() {
+        var numeroUm = primeiro_numero.value
+        var numeroDois = segundo_numero.value
+        var contaDivisão = numeroUm / numeroDois
+
+        alert(`${numeroUm} / ${numeroDois} = ${contaDivisão}`)
+    }
+
+    /*Função Mátematica Multiplicação*/
+
+    function botaoMultiplicação() {
+        var numeroUm = primeiro_numero.value
+        var numeroDois = segundo_numero.value
+        var contaMultiplicação = numeroUm * numeroDois
+
+        alert(`${numeroUm} * ${numeroDois} = ${contaMultiplicação}`)
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Receber 100-->
+
+    Receber 100 reais: 
+    <button onclick="botao100reais()">Receber 100</button>
+
+    <!--Receber 50-->
+
+    Receber 50 reais:
+    <button onclick="botao50reais()">Receber 50</button>
+</body>
+</html>
+<script>
+    /* Variavel global - saldo */ 
+    var saldo = 0 
+
+    /* Adicionar 100 reais */
+    function botao100reais() {
+        saldo+=100
+        alert(`“Transferência de R$100 recebida! Saldo atual: R$${saldo}”. `)
+    }
+
+    /*Adicionar 50 reais */ 
+    function botao50reais() {
+        saldo+=50 
+        alert(`“Transferência de R$50 recebida! Saldo atual: R$${saldo}`)
+    }
+</script>
