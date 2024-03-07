@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Titulos-->
+    <h1>
+        Medidas Antropométricas 
+    </h1>
+    
+    <h2>
+        Informe os dados abaixos
+    </h2>
+    <br> 
+
+    <!-- Informações Usúarios -->
+    Nome completo: 
+    <input type="text" id="input_nome"> <br>
+    Peso (em quilogramas) :
+    <input type="number" id="input_peso"> <br>
+    Altura (em metros) : 
+    <input type="number" id="input_altura"> <br>
+
+    <!--Botão Calcular IMC-->
+    <button onclick="CalcularIMC()">Calcular</button> <br> <br>
+
+    <!--Botão Exibir Resultado-->
+    <div id="div_exibir" style="font-size: 20px;" ></div>
+</body>
+</html>
+<script>
+
+    //Função CalcularIMC()
+    function CalcularIMC() {
+       
+        //Validando variaveis
+        var Nome = input_nome.value
+        var PesoKG= Number(input_peso.value)
+        var AlturaM = Number(input_altura.value) 
+
+        //Calculos IMC
+        var alturaPes = (AlturaM/0.3048) * 1
+        var pesoOnças = (PesoKG/0.01) * 35.274
+        var calculoPesOnças = pesoOnças/(alturaPes*alturaPes)
+        var imcCalculo =PesoKG/(AlturaM*AlturaM);
+
+        //Exibição Resultado 
+        
+        div_exibir.innerHTML=`${Nome} seu imc é de : ${imcCalculo} <br> A sua altura em pés é de : ${alturaPes} <br> O seu peso em onças é de :  ${pesoOnças} <br> O seu imc em onças/pés² é de : ${calculoPesOnças}`
+
+        //Teste com alert
+
+        //alert(`${Nome} e seu imc é de : ${imcCalculo} <br> A sua altura em pés é de :${alturaPes} <br> O seu peso em onças é de :  ${pesoOnças} <br>`)
+        
+        }
+        
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de KHW 
+    <input type="number" id="input_kwh">
+
+    <button onclick="CalcularGasto()">Calcular conta de luz</button>
+    <div id="div_luz"></div>
+</body>
+</html>
+<script>
+    function CalcularGasto() {
+        var qtdKWH = Number(input_kwh.value) 
+        var valor = qtdKWH*0.85
+
+        if(qtdKWH<100) {
+            var desconto =qtdKWH*0.10
+            
+            div_luz.innerHTML=`A conta vai ficar ${valor-desconto} R$`
+        }
+
+        if(qtdKWH>=100) {
+            div_luz.innerHTML=`A conta vai ficar ${valor} R$`
+        }
+    }
+</script>

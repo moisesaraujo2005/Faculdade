@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe horas de sono :
+    <input type="number" id="input_sono">
+    <button onclick="calcularSono()">Calcular Sono</button>
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function calcularSono() {
+            var sonoHoras= input_sono.value
+            div_exibir.innerHTML= `Ao dormir ${sonoHoras} horas, você dormiu : <br>
+            ${sonoHoras*0.05} horas na fase 1 <br>
+            ${sonoHoras*0.45} horas na fase 2 <br> 
+            ${sonoHoras*0.30} horas na fase 3 <br>
+            ${sonoHoras*0.20} horas na fase REM`
+    }
+</script>

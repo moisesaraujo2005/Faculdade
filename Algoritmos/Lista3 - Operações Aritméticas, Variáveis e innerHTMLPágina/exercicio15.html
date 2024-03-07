@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe seu peso :
+    <input type="number" id="input_peso">
+    Informe sua altura: 
+    <input type="number" id="input_altura">
+    <button onclick="imc()">Calcular imc</button>
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function imc() {
+        var pesoKg = Number(input_peso.value)
+        var alturaCentimentros= Number(input_altura.value)
+        var alturaMetros = alturaCentimentros/100
+
+        var calculoIMC =  (pesoKg/(alturaMetros*alturaMetros)).toFixed(2) 
+        div_exibir.innerHTML=`Seu imc é ${calculoIMC}`
+        }
+</script>

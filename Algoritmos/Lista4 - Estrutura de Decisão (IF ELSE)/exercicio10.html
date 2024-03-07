@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira seu saldo na conta  :
+    <input type="number" id="input_saldo"> <br>
+    <button onclick="finanças()">Verificar finanças</button>
+
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function finanças() {
+        var saldoConta = Number(input_saldo.value) 
+
+        if(saldoConta == 0 ) {
+            div_exibir.innerHTML = `<span style= "color : black;" > Conta zerada </span>`
+        }
+        
+        if(saldoConta >0 ) {
+            div_exibir.innerHTML = `<span style= "color : blue;" > Saldo positivo! sorriso </span>`
+        }
+        
+        if(saldoConta <0 ) {
+            div_exibir.innerHTML = `<span style= "color : red;" > Esta devendo! </span>`
+        }
+    }
+</script>

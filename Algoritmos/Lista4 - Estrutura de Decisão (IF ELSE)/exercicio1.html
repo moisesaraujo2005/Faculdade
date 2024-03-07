@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira sua idade :
+    <input type="number" id="input_numero"> <br>
+    <button onclick="Botao()">Calcular</button>
+
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function Botao() {
+        var idade = Number(input_numero.value)
+
+        if(idade<18) {
+            div_exibir.innerHTML=`Pedir permissão pro responsavel , #Partiu Festa`
+        }
+
+        if(idade>=18) {
+            div_exibir.innerHTML= `#Partiu festa`
+        }
+    }
+</script>

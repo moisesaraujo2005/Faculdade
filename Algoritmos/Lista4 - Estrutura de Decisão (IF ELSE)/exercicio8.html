@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de homens :
+    <input type="number" id="input_homens"> <br>
+    Insira  a quantidade de mulheres:
+    <input type="number" id="input_mulheres"> <br>
+
+    <button onclick="botao()">Analisar peso:</button>
+
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function botao() {
+        div_exibir.innerHTML = ``
+        var qtdHomens = Number(input_homens.value) 
+        var qtdMulheres = Number(input_mulheres.value) 
+
+        var contaHomens = qtdHomens*80
+        var contaMulheres= qtdMulheres*60
+
+        var pesoElevador = contaHomens+contaMulheres
+
+        div_exibir.innerHTML = `"Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${pesoElevador}kg" <br> `
+
+        if(pesoElevador>800) {
+            div_exibir.innerHTML+=` <span style="color:blue;"  >"Será necessário que alguém desça para que o elevador se movimente" </span>`
+        }
+
+
+
+    }
+</script>

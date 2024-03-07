@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas latinhas de refrigerante você toma por dia :
+    <input type="number" id="id_refrigerante"> <br>
+
+    <button onclick="BotaoRefri()">Quantos refri?</button>
+    <div id="div_refri"></div>
+</body>
+</html>
+<script>
+    function BotaoRefri() {
+        var Refrigerantes= Number(id_refrigerante.value) 
+        
+        var CalculoRefri = Refrigerantes*365
+
+            div_refri.innerHTML= `Você consome ${CalculoRefri} refrigerantes por ano`
+        if(CalculoRefri>=500) {
+            div_refri.innerHTML= `Você consome ${CalculoRefri} refrigerantes por ano <br>`
+            div_refri.innerHTML+= `Cuidado com as diabetes!`
+        }
+    }
+</script>

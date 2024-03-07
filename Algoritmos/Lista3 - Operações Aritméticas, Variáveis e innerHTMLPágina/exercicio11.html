@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Numero tabuada:
+    <input type="number" id="input_tabuada">
+    <button onclick="Tabuada()">Ver tabuada</button>
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    var tabuadaSoma=0
+    function Tabuada() {
+        tabuadaSoma+=1 
+      var tabuada = Number(input_tabuada.value)
+      var limite = tabuadaSoma*9
+      div_exibir.innerHTML=`${tabuada} + ${limite} = ${tabuada*tabuadaSoma}` 
+    
+
+    }
+</script>

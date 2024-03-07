@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Informações sobre o transporte -->
+    Informe o valor da passagem :
+    <input type="number" id="passagem_onibus">
+    Informe a quantidade de viagens mensais: 
+    <input type="number" id="qtd_viagens">
+    Informe a distancia do seu trabalho até em casa em (km) 
+    <input type="number" id="distancia_viagens">
+
+    <!--Botão Viagem-->
+    <button onclick="viagem()">Calcular VT</button>
+
+    <!--Exibir passagem-->
+    <div id="exibir_passagem"></div>
+</body>
+</html>
+<script>
+    function viagem() {
+
+        var passagemOnibus= Number(passagem_onibus.value) 
+        var qtdViagens= Number(qtd_viagens.value)
+        var distanciaViagens= Number(distancia_viagens.value )
+        
+        var viagensdeUber = (qtdViagens*0.10) * (distanciaViagens*0.75)
+        var dinheiroGasto= (passagemOnibus*qtdViagens) + viagensdeUber
+        var uber = distanciaViagens*0.75
+        
+
+        alert(`Você vai gastar ${dinheiroGasto}`)
+        
+       
+    }
+    // 2*30= 60+22.50 =  82.50
+    //97,5
+</script>

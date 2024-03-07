@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o saldo da conta :
+    <input type="number" id="input_saldo"> <br>
+    Valor a retirar da conta (débito)
+    <input type="number" id="input_debito"> <br>
+    <button onclick="botao()">Analisar a conta</button>
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function botao() {
+        div_exibir.innerHTML=`` 
+        
+        var Saldo = Number(input_saldo.value) 
+        var Retirar = Number(input_debito.value)
+        var calculo = Saldo-Retirar
+
+        
+        if(calculo<0) {
+
+            div_exibir.innerHTML= ` <span style="color:red; font-weight:bold;" >  "O saldo atual da conta corrente é ${calculo}". </span>`
+        }
+
+       else {
+        div_exibir.innerHTML = `Seu saldo é ${calculo}`
+       }
+    }
+</script>

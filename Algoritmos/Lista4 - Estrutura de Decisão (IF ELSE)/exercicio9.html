@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o ultimo SITCOM que você assistiu :
+    <input type="text" id="input_sitcom"> <br>
+    Insira o total de episódios:
+    <input type="number" id="input_episodios"> <br>
+
+    <button onclick="Nivel()">Verificar nível</button>
+
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function Nivel() {
+        var nomeSitcom = input_sitcom.value 
+        var qtdEpisodios = Number(input_episodios.value) 
+
+        var calculoEpisodio = qtdEpisodios*22
+
+        div_exibir.innerHTML = `Vejo que você gosta da série ${nomeSitcom} <br>`
+
+        if(calculoEpisodio>1800) {
+            div_exibir.innerHTML += `Uau você realmente gosta dessa série`
+        }
+
+    }
+</script>

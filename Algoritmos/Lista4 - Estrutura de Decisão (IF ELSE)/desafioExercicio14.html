@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira seu nome:
+    <input type="text" id="input_nome">
+    Insira a quantidade de km 
+    <input type="number" id="input_km">
+    Insira a bandeira 
+    <input type="number" min="1" max="3" id="input_bandeira"> 
+    Insira o hórario da corrida1 :
+    <input type="number" min="0" max="23" id="input_corrida">
+
+    <button onclick="Corrida()">Calcular corrida</button>
+    <div id="div_exibir"></div>
+
+</body>
+</html>
+<script> 
+    function Corrida() {
+        var Nome= input_nome.value
+        var qtdKm = Number(input_km.value) 
+        var bandeira = Number(input_bandeira.value) 
+        var HorasCorrida = Number(input_corrida.value)
+        var valorCorrida =  qtdKm*1.25
+
+        
+        
+
+        if(HorasCorrida<=23) {
+            valorCorrida += (valorCorrida * (bandeira*0.15))
+        }
+
+        
+        
+        if(HorasCorrida<=12) {
+            valorCorrida += (valorCorrida * (bandeira*0.10) )
+        }
+
+        
+        if(HorasCorrida<=6) {
+            valorCorrida += (valorCorrida * (bandeira*0.05) )
+        }
+
+
+
+        div_exibir.innerHTML= `Olá passageiro ${Nome} sua corrida será na ${bandeira} bandeira, percorrera ${qtdKm} km e o valor será ${valorCorrida}`
+
+        }
+        
+    
+</script>
+</body>
+</html>

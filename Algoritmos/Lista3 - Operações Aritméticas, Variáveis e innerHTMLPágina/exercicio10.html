@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de votos do candidato A :
+    <input type="number" id="input_candidatoA">
+    Quantidade de votos do candidato B 
+    <input type="number" id="input_candidatoB">
+    Quantidade de votos em branco : 
+    <input type="number" id="input_votosBranco">
+    Quantidade de votos nulo: 
+    <input type="number" id="input_votosNulo"> 
+    <button onclick="Resultado()">Resultado da eleições</button>
+    <div id="div_exibir"></div>
+
+</body>
+</html>
+<script>
+    function Resultado() {
+        var candidatoA= Number(input_candidatoA.value)
+        var candidatoB= Number(input_candidatoB.value)
+        var votosBranco= Number(input_votosBranco.value)
+        var votosNulo= Number(input_votosNulo.value)
+        var votosInvalidos = votosBranco+votosNulo
+        var totalVotos = candidatoA+candidatoB+votosBranco+votosNulo
+        
+        div_exibir.innerHTML=` O total de votos foi ${totalVotos}<br>
+        Candidato A  ${(candidatoA*100) / totalVotos} % ${candidatoA} <br>
+        Candidato B ${(candidatoB*100) / totalVotos} % ${candidatoB} <br> 
+        Inválidos ${(votosInvalidos*100)/ totalVotos}% ${votosInvalidos}
+        `
+    }
+</script>

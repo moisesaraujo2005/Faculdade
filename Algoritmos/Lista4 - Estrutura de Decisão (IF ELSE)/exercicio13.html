@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a 1 nota 
+    <input type="number" id="input_numero"> <br> 
+    Insira a 2 nota 
+    <input type="number" id="input_segundoNumero"> <br>
+
+    <button onclick="Calcular()">Verificar situação</button>
+
+
+</body>
+</html>
+<script>
+    function Calcular() {
+        var n1 = Number(input_numero.value) 
+        var n2 = Number(input_segundoNumero.value) 
+
+        var média = (n1+n2) / 2
+
+        if(média >=6) {
+            alert(`Parabéns aprovado!`)
+        }
+        else{
+            alert(`Tente outra vez...`)
+        }
+    }
+</script>
