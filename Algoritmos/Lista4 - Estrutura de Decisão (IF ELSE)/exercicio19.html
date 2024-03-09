@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira sua 1 nota  : 
+    <input type="number" id="input_n1">
+    Insira sua 2 nota :
+    <input type="number" id="input_n2">
+
+    <button onclick="verificar()">Verificar situação</button>
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+
+        var nota1 = Number(input_n1.value) 
+        var nota2 = Number(input_n2.value) 
+
+        var média = (nota1+nota2) / 2
+
+        if(média>=6) {
+            div_exibir.innerHTML = `Parabéns Aprovado!`
+        }
+
+        else {
+            div_exibir.innerHTML = `Tente outra vez..`
+        }
+
+
+    }
+</script>

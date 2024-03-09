@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor do salario :
+    <input type="number" id="input_salario"> <br>
+
+    Insira o valor do adicional mensal :
+    <input type="number" id="input_adicional"> <br> 
+
+    Insira o valor do bônus :
+    <input type="number" id="input_bonus"> <br>
+
+    <button onclick="Analisar()">Analisar minha renda</button>
+
+    <div id="div_exibir" style="color: red;">
+
+    </div>
+
+
+</body>
+</html>
+
+
+<script>
+
+    
+    function Analisar() {
+        var valorSalario = Number(input_salario.value) 
+        var valorAdicionalMensal = Number (input_adicional.value) 
+        var valorBonus = Number(input_bonus.value) 
+
+        var valorBruto = valorAdicionalMensal+valorBonus+valorSalario
+        var descontoIR = 0;
+
+        
+
+
+
+        if(valorBruto>=10000) {
+            var descontoIR = valorBruto*0.125
+            valorBruto = valorBruto-descontoIR
+            
+        }
+       
+        
+      
+
+        var descontoINSS = valorBruto*0.10
+        var descontoFGTS = valorBruto*0.08
+
+        var salarioLiquido = valorBruto-descontoINSS-descontoFGTS
+
+        valorBruto= valorAdicionalMensal+valorBonus+valorSalario
+      
+
+        div_exibir.innerHTML = `     “ANÁLISE DA SUA RENDA <br>
+
+                    Com o salário de R$${valorSalario}, com adicional de R$${valorAdicionalMensal} e bônus de R$${valorBonus}, você tem:  <br>
+
+                            Bruto: R$${valorBruto}  <br>
+
+                            IR: R$${descontoIR}  <br>
+
+                            INSS: R$${descontoINSS} <br>
+                            
+                            FGTS: R$${descontoFGTS} <br>
+
+                            Líquido: R$${salarioLiquido}“ <br>`
+
+        
+
+        
+        if(salarioLiquido>2500) {
+            var poupança = salarioLiquido*0.15 
+            var poupançaAnual = poupança*12
+
+            div_exibir.innerHTML+=`  Com a renda de R$${salarioLiquido}, é recomendado poupar R$${poupança}, para que em um ano tenha poupado R$${poupançaAnual} `
+        }
+
+        else {
+            div_exibir.innerHTML+= `Com a renda de R$${salarioLiquido} é recomendado obter renda extra para realizar uma poupança.`
+        }
+        
+    }
+    
+
+</script>

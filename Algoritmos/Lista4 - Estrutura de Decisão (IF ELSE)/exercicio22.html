@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira sua meta de economia :
+    <input type="number" id="input_meta">
+
+    Insira o quanto tem guardado :
+    <input type="number" id="input_guardado">
+
+    <button onclick="Meta()">Analisar Economia</button>
+
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function Meta() {
+
+        var meta = Number(input_meta.value) 
+        var guardado = Number(input_guardado.value) 
+
+        var diferenca = guardado-meta
+
+       
+        if(guardado>meta) {
+            div_exibir.innerHTML = `Parabéns meta alcançada, Meta ultrapassada em ${diferenca}`
+    
+        }
+        else if(guardado==meta) {
+            div_exibir.innerHTML = `Parabéns meta alcançada!`
+        }
+
+        else {
+            var aindaFalta = meta-guardado
+
+            div_exibir.innerHTML = `Força! Ainda em Busca da meta! Falta ${aindaFalta}`
+        }
+
+    }
+</script>

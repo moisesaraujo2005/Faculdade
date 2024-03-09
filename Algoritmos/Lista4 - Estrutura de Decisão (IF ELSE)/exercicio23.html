@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira seu nome skateboard! :
+    <input type="text" id="input_skate">
+
+    Insira sua manobra favorita :
+    <input type="text" id="input_manobraFav">
+
+    Insira a manobra do seus sonhos :
+    <input type="text" id="input_manobraDosSonhos">
+
+    <button onclick="analisar()">Bora fazer uma sessão</button>
+    <br> <br>
+    <div id="div_exibir"></div>
+</body>
+</html>
+
+<script>
+    function analisar() {
+        div_exibir.innerHTML= ``
+
+        var nomeSkate = input_skate.value
+        var manobraFav = input_manobraFav.value
+        var manobraSonhos = input_manobraDosSonhos.value 
+
+
+        if(manobraFav == '') {
+            alert(`Insira sua manobra favorita!`)
+        }
+        else if (nomeSkate == ''){
+            alert(`Insira seu nome skateboard!`)
+        }
+
+        else if (manobraSonhos=='') {
+            alert(`Insira sua manobra dos sonhos!`)
+        }
+
+
+        else if (manobraFav=='Ollie'){
+            div_exibir.innerHTML = `Continue andando! se não vai ser <span style="color:red" ; > sacrificado </span> no vale! ${nomeSkate} <br> <br> <br>`
+            if(manobraSonhos=='Flip') {
+                div_exibir.innerHTML+= `<img width = "250px" height = "150px" src="https://pm1.aminoapps.com/6534/71a40559cf84c260597465dd8c8652ada1aa30b9_hq.jpg" > `
+
+            }
+        }
+
+        else if (manobraFav=='Flip') {
+            div_exibir.innerHTML = `<span style = "color:blue";> Um clássico! ${nomeSkate} </span> <br> <br> <br>`
+            if(manobraSonhos=='360 Flip') {
+                div_exibir.innerHTML += ` Continue Treinando ! <br> <br> <img src="https://www.skatedeluxe.com/blog/wp-content/uploads/2016/09/skateboard-trick-tipp-360-flip-600x400.jpg" >`
+            }
+        }
+
+
+            else if(manobraFav == "360 Flip"){
+                if(manobraSonhos== "Hard Flip") {
+                div_exibir.innerHTML += `<img width = "250px" height = "200px"src = "https://media.licdn.com/dms/image/D4D03AQFXrMB_hbNP1Q/profile-displayphoto-shrink_800_800/0/1693777588236?e=2147483647&v=beta&t=Bzs69JKc4ihU_nQRg01wCrhK9_eVGrhhoFsXiHQfC1Y" >`
+                alert(`Caramba vocé é praticamente o Moisés andando!`)
+            }
+        }
+    
+        else {
+            alert(`Desculpa Pro! Esse programa não foi feito para você`)
+            
+            div_exibir.innerHTML+= `<img width = "250px" height = "200px"src = "https://media.licdn.com/dms/image/D4D03AQGPu8zCTLMy4g/profile-displayphoto-shrink_800_800/0/1709428859339?e=1715212800&v=beta&t=ALqxAH8a-qhJmM0781oLG4_u4FtfQdDZ_Ch0pXMxJRU" >`
+
+        }
+    
+    
+    }
+
+    
+
+    
+</script>

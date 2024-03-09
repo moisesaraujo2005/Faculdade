@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a temperatura do ambiente :
+    <input type="number" id="input_ambiente">
+
+    <button onclick="Verificar()">Verificar Clima</button>
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+
+    function Verificar() {
+        var tempAmbiente = Number(input_ambiente.value) 
+
+
+        if(tempAmbiente<10) {
+            div_exibir.innerHTML = `<img src="https://www.assai.com.br/sites/default/files/blog/alimentacao_saudavel.jpg" >`
+        }
+        else {
+            div_exibir.innerHTML = `<img src="https://uvn-brightspot.s3.amazonaws.com/assets/vixpt/bbr/thinkstockphotos-186937868.jpg   " >`
+        }
+
+    }
+
+</script>

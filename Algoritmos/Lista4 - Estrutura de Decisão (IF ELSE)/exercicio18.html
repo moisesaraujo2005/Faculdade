@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua frequência :
+    <input type="number" id="input_frequencia">
+
+    <button onclick="Analisar()">Analisar frequência</button>
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function Analisar() {
+        var frequenciaAluno = Number(input_frequencia.value) 
+
+        if(frequenciaAluno<50) {
+            div_exibir.innerHTML = `<img width = "250px" height = "150px" src="https://st3.depositphotos.com/12982378/35274/i/450/depositphotos_352740142-stock-photo-shocked-traveler-hat-backpack-holding.jpg"      >        `
+        }
+        else {
+            div_exibir.innerHTML= `<img width = "250px" height = "150px" src="https://32966.cdn.simplo7.net/static/32966/sku/aderecos-para-festas-oculos-para-festas-oculos-fundo-de-garrafa-fantasia-estilo-nerd-intelectual-cegueta--p-1698863346447.jpg" >`
+        }
+    }
+</script>
