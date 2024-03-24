@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Insira a altura :
+    <input type="number" id="input_altura"> <br>
+
+
+    <button onclick="estatura()">Analisar Estatura</button>
+    <div id="div_mensagem">
+
+    </div>
+</body>
+
+</html>
+
+
+<script>
+
+    function estatura() {
+
+        var alturaUsuario = Number(input_altura.value)
+
+        if (alturaUsuario <= 1.65) {
+            div_mensagem.innerHTML = `Você pode ser piloto de corrida`
+        }
+
+        else if (alturaUsuario <= 1.80) {
+            div_mensagem.innerHTML = `Você pode ser jogador de futebol`
+        }
+
+        else {
+            div_mensagem.innerHTML = `Você pode ser jogador basquete ou volei`
+        }
+
+    }
+
+</script>

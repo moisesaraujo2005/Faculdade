@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Insira a nota do aluno :
+    <input type="number" id="input_nota">
+
+    <button onclick="nota()">Nota Aluno</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+
+<script>
+
+    function nota() {
+
+        var notaAluno = Number(input_nota.value)
+
+        if (notaAluno < 5) {
+            div_mensagem.innerHTML = `Aluno precicsa de muita ajuda`
+        }
+
+        else if (notaAluno <= 7) {
+            div_mensagem.innerHTML = `Aluno na média`
+        }
+
+        else if (notaAluno <= 9.5) {
+            div_mensagem.innerHTML = `Aluno acima da média`
+        }
+
+        else {
+            div_mensagem.innerHTML=`Aluno fora da curva`
+        }
+
+    }
+
+</script>

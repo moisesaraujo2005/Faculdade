@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua renda : <br>
+    <input type="number" id="input_renda"> <br>
+
+    Insira sua renda familiar : <br> 
+    <input type="number" id="input_familiar"> <br> 
+
+    <button onclick="Renda()">Verificar Ajuda</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function Renda() {
+
+        const rendaUsuario = document.getElementById("input_renda").value
+        const rendaFamiliar = document.getElementById("input_familiar").value
+
+        if(rendaUsuario <=1050 && rendaFamiliar <=2100) {
+
+            div_mensagem.innerHTML = `Você terá direito`
+
+        }
+        else {
+            div_mensagem.innerHTML=`Você não terá direito`
+
+        }
+
+    }
+
+</script>

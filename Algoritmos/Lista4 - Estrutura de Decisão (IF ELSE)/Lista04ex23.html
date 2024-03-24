@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 23</title>
+</head>
+
+<body>
+    Digite o nome do skatista: <br>
+    <input type="text" id="input_nome"><br>
+    Digite sua manobra favorita:<br>
+    <input type="text" id="input_manobra_favorita"><br>
+    Digite sua manobra dos sonhos:<br>
+    <input type="text" id="input_manobra_sonho"> <br> <br>
+    <button onclick="Skate()">Skate</button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+<script>
+    function Skate() {
+        var nome = input_nome.value;
+        var manobraFav = input_manobra_favorita.value;
+        var manobraSonho = input_manobra_sonho.value;
+
+        /*MANOBRA FAVORITA*/
+        if (manobraFav == "ollie") {
+            div_mensagem.innerHTML += `Continue andando! Se não vai ser <span style="color: red;">sacrificado</span> no vale`
+        }
+        if (manobraFav == "flip") {
+            div_mensagem.innerHTML += `<span style="color: blue;">Um classico !</span>`
+        }
+        if (manobraFav == "360 flip") {
+            alert("Caramba você é praticamente o Moises andando!")
+        }
+        if (manobraFav == "hard flip") {
+            if (manobraSonho == "impossible") {
+                alert("Desculpa esse programa não foi feito para você !! ")
+                div_mensagem.innerHTML += `<br><img src="https://media.licdn.com/dms/image/D4D03AQGPu8zCTLMy4g/profile-displayphoto-shrink_800_800/0/1709428859339?e=1715212800&v=beta&t=ALqxAH8a-qhJmM0781oLG4_u4FtfQdDZ_Ch0pXMxJRU"> `
+            }
+        }
+        
+        /*MANOBRA DOS SONHOS*/
+        if (manobraSonho == "flip") {
+            div_mensagem.innerHTML += `<br><img src="https://pm1.aminoapps.com/6534/71a40559cf84c260597465dd8c8652ada1aa30b9_hq.jpg">`
+        }
+
+        if (manobraSonho == "360 flip") {
+            div_mensagem.innerHTML += `<br>Continue treinando!<br><br><img src="https://www.skatedeluxe.com/blog/wp-content/uploads/2016/09/skateboard-trick-tipp-360-flip-600x400.jpg"> `
+        }
+
+        if (manobraSonho == "hard flip") {
+            div_mensagem.innerHTML += `<br><img src="https://media.licdn.com/dms/image/D4D03AQFXrMB_hbNP1Q/profile-displayphoto-shrink_800_800/0/1693777588236?e=2147483647&v=beta&t=Bzs69JKc4ihU_nQRg01wCrhK9_eVGrhhoFsXiHQfC1Y"> `
+        }
+
+
+
+    }
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Calculadora de cansaço do aluno SPTech</h1>
+
+    <span>
+        Meio de transporte (Onibus, Metro, Carro, Bicicleta ou Uber)
+        <input type="text" id="input_transporte"> <br>
+
+        Distância da Faculdade :
+        <input type="number" id="input_distancia"> <br>
+
+    </span>
+
+    <button onclick="cansaço()">Calcular cansaço</button>
+
+    <div id="div_mensagem">
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function cansaço() {
+        var meioTransporte = input_transporte.value
+        var distanciaFaculdade = Number(input_distancia.value)
+
+        if (distanciaFaculdade <= 10 && (meioTransporte == 'Carro' || meioTransporte == 'Metro' || meioTransporte == 'Onibus')) {
+            div_mensagem.innerHTML = `Ta tranks...`
+
+        }
+
+        else {
+            div_mensagem.innerHTML = `É, um pouco cansado..`
+
+
+            if (distanciaFaculdade > 10 && meioTransporte == 'Carro') {
+                div_mensagem.innerHTML = `É um pouco cansado..`
+            }
+
+            else if (distanciaFaculdade > 10 && (meioTransporte == 'Metro' || meioTransporte == 'Onibus')) {
+                div_mensagem.innerHTML = `Bem cansado`
+            }
+            else if (distanciaFaculdade > 10 && meioTransporte == 'Bicicleta') {
+                div_mensagem.innerHTML = `Vish tá so o pó`
+            }
+
+        }
+
+
+    }
+</script>

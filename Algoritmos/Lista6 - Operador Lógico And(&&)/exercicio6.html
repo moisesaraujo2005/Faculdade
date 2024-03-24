@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua nota : 
+    <input type="number" id="input_nota"> <br> 
+
+    Insira a sua frequencia :
+    <input type="number" id="input_frequencia"> <br>
+
+    <button onclick="aluno()">Avaliar Aluno</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function aluno () {
+
+
+        const notaAluno = document.getElementById("input_nota").value 
+        const frequenciaAluno = document.getElementById("input_frequencia").value 
+
+        if(notaAluno>=6 && frequenciaAluno >=75) {
+
+            div_mensagem.innerHTML = `Parabéns Aprovado!`
+
+        }
+
+        else {
+            div_mensagem.innerHTML = `Infelizmente não foi desta vez!`
+
+        }
+
+    }
+
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira sua idade : 
+    <input type="number" id="input_idade">
+
+    Insira sua renda : 
+    <input type="number" id="input_renda">
+
+    <button onclick="renda()">Analisar situação</button>
+
+    <div id="div_mensagem">
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+
+    function renda() {
+
+        const idadeUsuario = document.getElementById("input_idade").value
+        const rendaUsuario = document.getElementById("input_renda").value 
+
+
+        if(idadeUsuario<18 && rendaUsuario <2500) {
+
+            div_mensagem.innerHTML = `Menor de idade e liso`
+
+        }
+
+        else if (idadeUsuario<18 && rendaUsuario>=2500) {
+            div_mensagem.innerHTML = `Menor de idade e ostentação`
+        }
+
+        else if(idadeUsuario>=18 && rendaUsuario <3500) {
+            div_mensagem.innerHTML = `Maior de idade e liso`
+        }
+
+        else if (idadeUsuario>=18 && rendaUsuario >=3500 && rendaUsuario <=7000) {
+            div_mensagem.innerHTML =`Maior de idade e ostentação`
+
+        }
+
+        else {
+            div_mensagem.innerHTML =`Maior de idade e mega ostentação`
+        }
+
+    }
+
+</script>

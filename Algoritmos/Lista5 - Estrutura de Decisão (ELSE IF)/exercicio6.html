@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Qual time você torce?
+    <input type="text" id="input_time">
+
+    <button onclick="time()">Analisar Time</button>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function time() {
+
+        var timeUsuario = input_time.value
+
+        if (timeUsuario == 'Corinthians') {
+
+            div_mensagem.innerHTML = `<span style="color:white; background-color:black;"> Salve o Corinthians </span> `
+        }
+
+        else if (timeUsuario == 'Santos') {
+            div_mensagem.innerHTML = `<span style="color:black; background-color:white;"> Agora quem da a bola é o Santos </span> `
+        }
+        else if (timeUsuario == 'Palmeiras') {
+            div_mensagem.innerHTML = `<span style="color:white; background-color:green;"> Salve o alviverde imponente </span> `
+        }
+        else {
+            div_mensagem.innerHTML = `<span style="color:red; background-color:black;"> Salve O tricolor paulista </span> `
+        }
+
+
+    }
+</script>

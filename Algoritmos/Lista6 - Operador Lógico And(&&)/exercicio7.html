@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira seu login de acesso : 
+    <input type="text" id="input_login"> <br>
+
+    Insira sua senha de acesso :
+    <input type="password" id="input_acesso"> <br> 
+
+    <button onclick="login()">Entrar</button>
+
+    <div id="div_mensagem">
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function login() {
+
+        const loginAcesso = document.getElementById("input_login").value 
+        const senhaAcesso = document.getElementById("input_acesso").value 
+
+
+        if(loginAcesso == 'SPTech' && senhaAcesso == 'digital') {
+
+            div_mensagem.innerHTML = `Autenticado com sucesso`
+        }
+
+        else {
+
+            div_mensagem.innerHTML = `Falha na autenticação `
+        }
+
+
+    }
+
+</script>

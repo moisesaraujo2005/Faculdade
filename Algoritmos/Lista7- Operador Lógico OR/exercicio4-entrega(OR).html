@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira seu método de pagamento (Débito, Crédito, Boleto ou Dinheiro) 
+    <input type="text" id="input_pagamento"> <br>
+
+    <button onclick="analisar()">Analisar Compra</button>
+
+    <div id="div_mensagem">
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+
+    function analisar() {
+
+        var metodoPagamento = input_pagamento.value 
+
+        if(metodoPagamento =='debito' || metodoPagamento =='dinheiro') {
+            div_mensagem.innerHTML = `Você terá que pagar a vista`
+        }
+
+        else {
+            div_mensagem.innerHTML = `Pagamento poderá ser parcelado`
+        }
+
+    }
+
+</script>

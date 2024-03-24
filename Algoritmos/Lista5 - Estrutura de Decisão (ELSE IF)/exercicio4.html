@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Insira seu peso (KG)
+    <input type="number" id="input_peso">
+
+    <button onclick="peso()">Analisar Peso</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function peso() {
+
+        var pesoUsuario = Number(input_peso.value)
+
+        if (pesoUsuario <= 13.5) {
+            div_mensagem.innerHTML = `Abaixo do peso`
+
+        }
+
+        else if (pesoUsuario == 18.3) {
+            div_mensagem.innerHTML = `Peso perfeito`
+        }
+
+        else if (pesoUsuario <= 21.2) {
+            div_mensagem.innerHTML = `Peso na média`
+        }
+
+
+        else {
+            div_mensagem.innerHTML = `Acima do peso`
+        }
+
+    }
+
+</script>

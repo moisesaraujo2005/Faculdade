@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Insira a nota de Algoritmos na AC1 :
+    <input type="number" id="input_ac1_algoritmos"> <br>
+
+    Insira a nota de Banco de Dados na AC1 :
+    <input type="number" id="input_ac1_banco"> <br>
+
+    Insira a nota de Arquitetura Computacional na AC1 :
+    <input type="number" id="input_ac1_arqcomp"> <br>
+
+    Insira a nota de Tecnologia da Informação na AC1 :
+    <input type="number" id="input_ac1_t.i"> <br>
+
+    Insira a nota de P.I (Projeto em grupo) :
+    <input type="number" id="input_notaPI"> <br> 
+
+    Insira a nota do projeto individual :
+    <input type="number" id="input_individual"> <br> 
+
+    Insira a nota das entregas :
+    <input type="number" id="input_entregas"> <br> 
+
+    <button onclick="Veredito()" style="background-color: red;">Veredito Final</button>
+
+    <div id="div_mensagem">
+
+    </div>
+
+
+</body>
+</html>
+
+
+<script>
+
+
+    function Veredito() {
+
+        const  notaContinuadaAlgoritmos = Number(document.getElementById("input_ac1_algoritmos").value)
+        const notaContinuadaBanco = Number(document.getElementById("input_ac1_banco").value )
+        const notaContinuadaArqComp = Number(document.getElementById("input_ac1_arqcomp").value)
+        const notaContinuadaTI = Number(document.getElementById("input_ac1_t.i").value )
+        const notaPI= Number(document.getElementById("input_notaPI").value )
+        const notaIndividual = Number(document.getElementById("input_individual").value) 
+        const notaEntrega = Number(document.getElementById("input_entregas").value)
+
+        
+
+        let calculoContinuadas = (notaContinuadaAlgoritmos+notaContinuadaArqComp+notaContinuadaBanco+notaContinuadaTI)/4
+
+        let pesoContinuada = calculoContinuadas*0.40
+
+        let calculoIndividualePI = (notaIndividual+notaPI)/2 
+
+        let pesoIndividualePI = calculoIndividualePI*0.30 
+
+        let pesoEntrega = notaEntrega*0.30 
+
+        let porcentagemTotal = (pesoContinuada+pesoIndividualePI+pesoEntrega)*10
+
+        if(porcentagemTotal<=40) {
+            div_mensagem.innerHTML = `Reprovado, volte para casa, pense na vida pois amanhã é um novo dia, suas notas ficaram ${porcentagemTotal} %`
+        }
+
+        else if (porcentagemTotal == 50) {
+            div_mensagem.innerHTML = `Reprovado mas com segunda chance! Foco, força e fé, não desista, pois em breve a mercedes vai estar na garagem, suas notas ficaram em  ${porcentagemTotal} %`
+        }
+
+        else if (porcentagemTotal == 60) {
+            div_mensagem.innerHTML = `Passou raspando, aproveite o estagio e jamais desista, suas notas ficaram ${porcentagemTotal} %`
+        }
+
+        else if(porcentagemTotal == 70) {
+            div_mensagem.innerHTML = `Aprovado, com tranquilidade, suas notas ficaram ${porcentagemTotal} %`
+        }
+
+        else {
+            div_mensagem.innerHTML = `Safra, Itau, Bradesco Ou C6 já estão te esperando!, suas notas ficaram ${porcentagemTotal} %`
+        }
+
+    
+    }
+
+</script>

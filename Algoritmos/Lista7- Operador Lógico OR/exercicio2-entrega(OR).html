@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a nota do enem: 
+    <input type="number" id="input_nota"> <br>
+
+    Insira a nota do vestibular interno : 
+    <input type="number" id="input_vestibular"> <br>
+
+    <button onclick="avaliarNota()">Avaliação</button>
+
+    <div id="div_mensagem">
+        
+    </div>
+</body>
+</html>
+
+<script>
+
+
+    function avaliarNota() {
+
+        var notaAluno = Number(input_nota.value) 
+        var notaVestibular = Number(input_vestibular.value)
+
+        if(notaAluno >=800 || notaVestibular >=700) {
+
+            div_mensagem.innerHTML = ` "Parabéns! Aprovado"`
+
+        }
+
+        else {
+            div_mensagem.innerHTML = `Teste semestre que vem!`
+        }
+
+    }
+
+</script>

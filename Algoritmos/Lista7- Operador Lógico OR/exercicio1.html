@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira uma fruta pra comer: 
+    <input type="text" id="input_fruta"> <br>
+
+    <button onclick="analisar()">Analisar Fruta</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+
+    function analisar() {
+
+        const frutaEscolhida = document.getElementById("input_fruta").value 
+
+        if(frutaEscolhida == 'abacaxi' || frutaEscolhida=='uva') {
+
+            div_mensagem.innerHTML = `Sim, vai comer ${frutaEscolhida}`
+        }
+        else {
+
+            div_mensagem.innerHTML = `A fruta ${frutaEscolhida} ela não come`
+
+        }
+
+    }
+
+</script>
