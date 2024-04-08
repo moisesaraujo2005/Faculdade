@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a altura da pessoa encontrada:
+    <input type="number" id="input_altura"> <br>
+
+    Selecione a cor de cabelo
+    <select  id="select_cabelo">
+        <option value="1">Preto</option>
+        <option value="2">Vermelho</option>
+        <option value="3">Amarelo</option>
+        <option value="4">Castanho</option>
+    </select>
+
+    <button onclick="match()">Deu match?</button>
+    
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function match() {
+        var alturaPessoa = Number(input_altura.value) 
+        var selecionarCabelo = select_cabelo.value 
+
+        if(alturaPessoa <1.85 && (selecionarCabelo=='3' || selecionarCabelo =='4')) {
+
+            div_mensagem.innerHTML = `<img src="https://img.freepik.com/psd-premium/homem-jovem-celebrando-um-sucesso_1187-6833.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1711411200&semt=ais" >`
+
+        }
+
+        else {
+            div_mensagem.innerHTML = `<img src="https://img.freepik.com/fotos-gratis/homem-triste-segurando-a-cabeca-com-a-mao_1150-6345.jpg" >`
+        }
+
+    }
+
+</script>

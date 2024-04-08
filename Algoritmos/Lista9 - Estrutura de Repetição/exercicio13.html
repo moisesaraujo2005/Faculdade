@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos dias você faz musculação
+    <input type="number" id="input_numero">
+
+    <button onclick="botao()">Exibir rotina mensal</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+
+    function botao() {
+
+        var numero = Number(input_numero.value) 
+
+        for(contador = 1; contador<=30; contador+=1) {
+           
+            
+            if(contador==1) {
+
+                div_mensagem.innerHTML = `${contador} Musculação <br>`
+            }
+            
+           else if(contador % numero ==0) {
+
+        
+                
+                div_mensagem.innerHTML += `${contador} Musculação <br>`
+                
+            }
+           
+
+            else {
+                div_mensagem.innerHTML += ` Dia ${contador} Comer, dormir etc <br>  `
+            }
+            
+        }
+
+    }
+</script>

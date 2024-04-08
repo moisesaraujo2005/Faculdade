@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Insira a quantidade de coca colas que você já consumiu na vida
+    <input type="number" id="input_qtdCoca">
+
+    <button onclick="cocaCola()">Ver a quantidade</button>
+
+    <div id="div_mensagem" ></div>
+   
+</body>
+</html>
+
+<script>
+
+
+    function cocaCola() {
+        div_mensagem.innerHTML = ``
+
+        var qtdCoca = Number(input_qtdCoca.value)
+
+        for(var contador =1; contador<=qtdCoca; contador++) {
+
+            div_mensagem.innerHTML += `<img src="https://a-static.mlcdn.com.br/450x450/coca-lata-330ml-coca-cola/hotdogsdoze/d328a80853c911eea78b4201ac185056/3633a7078e6d9868d581d1e4b46276b0.jpeg ">`
+
+        }
+
+    }
+
+</script>

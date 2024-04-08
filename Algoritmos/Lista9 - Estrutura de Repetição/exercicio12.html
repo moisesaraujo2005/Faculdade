@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a tabuada que você deseja ver :
+    <select  id="select_tabuada">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+
+    Insira o número em que a tabuada tem que ser Finalizada
+    <input type="number" id="input_tabuada">
+
+    <button onclick="tabuada()">Ver tabuad</button>
+
+    <div id="div_mensagem">
+
+    </div>
+</body>
+</html>
+
+<script>
+
+    function tabuada() {
+
+        var select = select_tabuada.value 
+        var numeroFinalizado = Number(input_tabuada.value) 
+
+        for(var contador =1; contador<=numeroFinalizado; contador++) {
+            if(contador % 2 == 0) {
+                div_mensagem.innerHTML+= `<div style="color: blue;"">${select} * ${contador}  = ${select*contador} <br> </div>`
+             }
+            else {
+                div_mensagem.innerHTML+= `<div style="color: red;">${select} * ${contador}  = ${select*contador} <br> </div>`
+            }
+
+        }
+
+    }
+
+</script>

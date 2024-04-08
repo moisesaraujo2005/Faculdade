@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Realizado por Moisés Silva-->
+    <h1>Seja bem vindo ao banco KNAB</h1>
+
+    <h2>Simulação de Emprestimos e Investimentos</h2>
+
+    <h3>Entre com os dados da sua conta</h3>
+    <div id="div_inputs">
+        <input type="number" placeholder="Conta" id="input_conta">
+        <input type="number" placeholder="Digito" id="input_digito">
+        <input type="password" placeholder="Senha" id="input_senha">
+
+        <br>
+
+        <button onclick="Banco()">Simular</button>
+    </div>
+
+    <div id="div_mensagem"></div>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function Banco() {
+        var Digito = 0
+        var contaUsuario = Number(input_conta.value)
+        var senha = input_senha.value
+        if (contaUsuario % 10 == 0) {
+            Digito = Number(input_digito.value)
+        }
+        else {
+            alert(`Digito errado!`)
+        }
+
+
+        if (Digito >= 0 && Digito < 4 && senha == 'manaus') {
+            alert(`Validado`)
+        }
+
+
+        else if (Digito >= 4 && Digito <= 7 && senha == 'recife') {
+            alert(`Validado`)
+        }
+
+        else if (senha == 'fortaleza' && Digito > 7) {
+            alert(`Validado`)
+        }
+        else  {
+            alert('incorreto!')
+        }
+
+
+
+
+
+
+        div_mensagem.innerHTML = `
+         
+        <div>
+        Valor da operação      <input type="number"  placeholder="Valor" id="input_valor"> <br>
+        Selecione a operação
+        <select  id="select_operação">
+        <option value="1">Empréstimo</option>
+        <option value="2">Investimento</option>
+    </select>
+
+    Selecione a Prazo
+    <select id="select_prazo">
+        <option value="1">Curto</option>
+        <option value="2">Médio</option>
+        <option value="3">Longo</option>
+    </select>
+<br>
+    <button onclick="resultado()">Mostrar o resultado</button> <br> <br> <br>
+    <button onclick="limpar()">Voltar simulador</button>
+    </div>
+
+    <style> 
+        #div_inputs{
+            opacity:0;
+
+        }
+
+        `
+
+    }
+
+    function resultado() {
+
+        var selectOperação = select_operação.value
+        var selectPrazo = select_prazo.value
+        var valorOperação = Number(input_valor.value)
+
+        if (selectPrazo == '1' || selectPrazo == '2') {
+            alert(`“Esta operação está condicionada ao seu perfil`)
+        }
+
+
+        if (selectOperação == '1' && selectPrazo == '1') {
+
+            for (var contador = 1; contador <= 12; contador++) {
+
+                valorOperação += valorOperação * 0.24
+                div_resultado.innerHTML += `${contador} Mês ${valorOperação.toFixed(2)} <br>`
+
+
+            }
+        }
+
+        else if (selectOperação == '1' && selectPrazo == '2') {
+
+
+            for (var contador = 1; contador <= 12; contador++) {
+
+                valorOperação += valorOperação * 0.16
+                div_resultado.innerHTML += `${contador} Mês ${valorOperação.toFixed(2)} <br>`
+            }
+
+        }
+
+        else if(selectOperação =='1' && selectPrazo=='3'){
+            for (var contador = 1; contador <= 12; contador++) {
+
+                valorOperação += valorOperação * 0.10
+                div_resultado.innerHTML += `${contador} Mês ${valorOperação.toFixed(2)} <br>`
+            }
+
+        }
+        else {
+
+        if (selectOperação == '2' && selectPrazo == '1') {
+            for (var contador = 1; contador <= 12; contador++) {
+
+                valorOperação += valorOperação * 0.05
+                div_resultado.innerHTML += `${contador} Mês ${valorOperação.toFixed(2)} <br>`
+            }
+        }
+
+        else if (selectOperação == '2' && selectPrazo == '2') {
+            for (var contador = 1; contador <= 12; contador++) {
+
+                valorOperação += valorOperação * 0.08
+                div_resultado.innerHTML += `${contador} Mês ${valorOperação.toFixed(2)} <br>`
+            }
+
+
+        }
+
+        else {
+            for (var contador = 1; contador <= 12; contador++) {
+
+                valorOperação += valorOperação * 0.12
+                div_resultado.innerHTML += `${contador} Mês ${valorOperação.toFixed(2)} <br>`
+            }
+        }
+
+    
+    }
+    }
+    function limpar() {
+        div_resultado.innerHTML = ``
+    }
+
+
+</script>

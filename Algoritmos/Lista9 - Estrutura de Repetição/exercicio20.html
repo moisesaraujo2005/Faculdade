@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de depósitos :
+    <input type="number" id="input_qtdDepositos">
+
+    Insira a quantidade do depósito :
+    <input type="number" id="input_valor">
+
+    <button onclick="grana()">Acompanhar grana</button>
+
+    <div id="div_mensagem">
+       
+    </div>
+
+</html>
+
+<script>
+
+    var saldo = 0;
+    var acrescimo = 0
+    function grana() {
+        div_mensagem.innerHTML = ``
+
+        var qtdDepositos = Number(input_qtdDepositos.value)
+        var valorDeposito = Number(input_valor.value)
+       
+        for(var contador = 1 ; contador<=qtdDepositos; contador++) {
+
+            saldo+=valorDeposito
+            acrescimo = 0.01
+            
+            
+           
+            
+           
+            if(contador % 3 == 0 ) {
+                saldo+= saldo*acrescimo
+                     
+            }
+            
+            div_mensagem.innerHTML += `${contador} Mês : ${saldo} <br> `
+                
+            if(contador==qtdDepositos) {
+                div_mensagem.innerHTML += `Total guardado ${saldo} <br>`
+            }
+          
+        
+        }
+
+    }
+
+</script>

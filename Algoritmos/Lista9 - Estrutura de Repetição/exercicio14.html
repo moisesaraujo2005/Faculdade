@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira sua idade 
+    <input type="number" id="input_number">
+
+    <button onclick="vida()">Idade</button>
+
+    <div id="div_mensagem">
+
+    </div>
+</body>
+</html>
+
+<script>
+
+
+    function vida() {
+
+        var idadeUsuario = Number(input_number.value) 
+
+        for(var contador = 1;  contador<=idadeUsuario;  contador++) {
+
+          
+            if(contador >= 0 && contador <=4) {
+                div_mensagem.innerHTML += `${contador} Primeira Infância <br>`
+            }
+
+            else if(contador > 4 && contador <=6) {
+                div_mensagem.innerHTML += `${contador} Pré-Escolar <br>`
+            }
+
+            else if(contador > 6 && contador <=10) {
+                div_mensagem.innerHTML += `${contador} Segunda infância <br>`
+            }
+
+            else if(contador > 10 && contador <18) {
+                div_mensagem.innerHTML += `${contador} Adolescência<br> `
+            }
+
+            else if(contador >18 && contador <=50) {
+                div_mensagem.innerHTML += `${contador} Adulto <br>`
+        }
+            
+            else if(contador >50 && contador <=100) {
+                div_mensagem.innerHTML += `${contador} Melhor idade<br>`
+            }
+
+            else {
+                div_mensagem.innerHTML += `${contador} Matusalém <br>`
+               
+            }
+            if(contador==idadeUsuario) {
+                div_mensagem.innerHTML += `Você tem ${idadeUsuario}  anos`
+            }
+
+
+        }
+
+    }
+
+</script>

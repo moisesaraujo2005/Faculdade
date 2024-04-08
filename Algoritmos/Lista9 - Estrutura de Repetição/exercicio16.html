@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de pessoas :
+    <input type="number" id="input_qtdPessoas">
+
+    Insira a quantidade de passageiros que o veiculo comporta 
+    <input type="number" id="input_qtdVeiculo">
+
+    <button onclick="carona()">Partiu Carona!</button>
+
+    <div id="div_mensagem">
+
+    </div>
+</html>
+
+<script>
+
+
+    function carona() {
+
+        var limite = Number(input_qtdVeiculo.value) 
+
+        var qtdPessoas = Number(input_qtdPessoas.value) 
+
+        for(var contador = 1; contador<=qtdPessoas; contador++) {
+
+            if(contador==1) {
+                div_mensagem.innerHTML += `Entrou o ${contador} (que é o motorista(o)) <br>`
+            }
+            else {
+                if(limite==contador ) {
+                    div_mensagem.innerHTML += `O ${contador} passageiro terá que esperar ! <br>`
+                }
+
+
+                else{
+                div_mensagem.innerHTML += `Entrou o ${contador} passageiro <br>` }
+
+               
+            }
+        
+
+        }
+
+    }
+
+</script>

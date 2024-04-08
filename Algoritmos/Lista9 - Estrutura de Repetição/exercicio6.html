@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quem você mais ama em sua vida
+    <input type="text" id="input_nome">
+
+    Quanto você ama ? 
+    <input type="number" id="input_numero">
+
+    <button onclick="botao()">Expressar amor</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+
+    function botao() {
+
+        var nome = input_nome.value
+        var numeroAmor = Number(input_numero.value) 
+
+        var texto = ''
+        for(contador=1; contador<=numeroAmor; contador++) {
+
+            texto += `${contador}  ${nome}  eu te amo! Sempre lembre disso! <br>`
+
+        }
+
+        div_mensagem.innerHTML = texto
+
+    }
+
+</script>

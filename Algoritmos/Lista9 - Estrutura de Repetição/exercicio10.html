@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o intervalo inicial :
+    <input type="number" id="input_inicial">
+
+    Insira o intervalo final :
+    <input type="number" id="input_final">
+
+    <button onclick="pares()">S2 Pares</button>
+
+    <div id="div_mensagem">
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+
+    function pares() {
+        div_mensagem.innerHTML = ``
+
+        var intervaloInicial = Number(input_inicial.value) 
+        var intervaloFinal = Number(input_final.value) 
+
+        if(intervaloFinal < intervaloInicial  || intervaloFinal == intervaloInicial) {
+            alert(`Erro, o intervalo final tem que ser maior que o inicial`)
+        }
+
+        else {
+
+            
+                for(intervaloInicial; intervaloInicial<intervaloFinal; intervaloInicial++) {
+                    
+                    if(intervaloInicial % 2 == 0) {
+                        div_mensagem.innerHTML +=`${intervaloInicial} <br>`
+                    }
+                }
+            }
+
+
+        }
+
+    
+
+</script>

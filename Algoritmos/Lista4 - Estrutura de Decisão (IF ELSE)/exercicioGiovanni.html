@@ -17,7 +17,7 @@
     <input type="number" id="input_ac1_arqcomp"> <br>
 
     Insira a nota de Tecnologia da Informação na AC1 :
-    <input type="number" id="input_ac1_t.i"> <br>
+    <input type="number" id="input_ac1_ti"> <br>
 
     Insira a nota de P.I (Projeto em grupo) :
     <input type="number" id="input_notaPI"> <br> 
@@ -44,27 +44,27 @@
 
     function Veredito() {
 
-        const  notaContinuadaAlgoritmos = Number(document.getElementById("input_ac1_algoritmos").value)
-        const notaContinuadaBanco = Number(document.getElementById("input_ac1_banco").value )
-        const notaContinuadaArqComp = Number(document.getElementById("input_ac1_arqcomp").value)
-        const notaContinuadaTI = Number(document.getElementById("input_ac1_t.i").value )
-        const notaPI= Number(document.getElementById("input_notaPI").value )
-        const notaIndividual = Number(document.getElementById("input_individual").value) 
-        const notaEntrega = Number(document.getElementById("input_entregas").value)
+       var  notaContinuadaAlgoritmos = Number (input_ac1_algoritmos.value)
+       var notaContinuadaBanco = Number (input_ac1_banco.value)
+       var notaContinuadaArqComp = Number (input_ac1_arqcomp.value)
+       var notaContinuadaTI = Number (input_ac1_ti.value )
+       var notaPI= Number (input_notaPI.value )
+       var notaIndividual = Number( input_individual.value)
+       var notaEntrega = Number(input_entregas.value)
 
         
 
-        let calculoContinuadas = (notaContinuadaAlgoritmos+notaContinuadaArqComp+notaContinuadaBanco+notaContinuadaTI)/4
+       var calculoContinuadas = (notaContinuadaAlgoritmos+notaContinuadaArqComp+notaContinuadaBanco+notaContinuadaTI)/4
 
-        let pesoContinuada = calculoContinuadas*0.40
+       var pesoContinuada = calculoContinuadas*0.40
 
-        let calculoIndividualePI = (notaIndividual+notaPI)/2 
+       var calculoIndividualePI = (notaIndividual+notaPI)/2 
 
-        let pesoIndividualePI = calculoIndividualePI*0.30 
+       var pesoIndividualePI = calculoIndividualePI*0.30 
 
-        let pesoEntrega = notaEntrega*0.30 
+       var pesoEntrega = notaEntrega*0.30 
 
-        let porcentagemTotal = (pesoContinuada+pesoIndividualePI+pesoEntrega)*10
+       var porcentagemTotal = (pesoContinuada+pesoIndividualePI+pesoEntrega)*10
 
         if(porcentagemTotal<=40) {
             div_mensagem.innerHTML = `Reprovado, volte para casa, pense na vida pois amanhã é um novo dia, suas notas ficaram ${porcentagemTotal} %`

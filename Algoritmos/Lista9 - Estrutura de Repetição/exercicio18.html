@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de xícaras de café com leito você já consumiu na vida:
+    <input type="number" id="input_qtdXicaras">
+
+    <button onclick="xicara()">Ver a quantidade</button>
+
+    <div id="div_mensagem">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+
+    function xicara() {
+        var qtdXicara = Number(input_qtdXicaras.value) 
+
+        for(var contador = 0; contador<=qtdXicara; contador++) {
+
+            if(contador%1==0) {
+            div_mensagem.innerHTML+= `<img src="https://img.freepik.com/fotos-premium/cafe-em-po-na-colher-de-madeira-em-branco_253984-1697.jpg" width="300px" height="150px">`
+            }
+            
+            if(contador % 2 ==0) {
+                div_mensagem.innerHTML+= `<img src="https://minhasaude.proteste.org.br/wp-content/uploads/2023/06/colher-carregando-punhado-de-leite-em-po-sobre-fundo-branco.jpg" width="300px" height="150px">`
+            
+            }
+
+            
+           
+           
+
+        }
+
+     /*   for(var contador =1 ; contador<=qtdXicara; contador+=2) {
+            div_mensagem.innerHTML += `<img src="https://img.freepik.com/fotos-premium/cafe-em-po-na-colher-de-madeira-em-branco_253984-1697.jpg" width="300px" height="150px">`
+        }
+    }*/ }
+
+</script>

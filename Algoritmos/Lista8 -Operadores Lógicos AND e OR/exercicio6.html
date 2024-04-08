@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a nota :
+    <input type="number" id="input_nota"> <br>
+
+    Insira a frequencia :
+    <input type="number" id="input_frequencia"> <br>
+
+    <button onclick="analisar()">Analisar Aluno</button>
+
+    <div id="div_mensagem"></div>
+    <div id="div_tentativas"></div>
+</body>
+</html>
+
+<script>
+
+    var tentativas = 3;
+
+    function analisar() {
+        
+        var notaAluno = Number(input_nota.value) 
+        var frequenciaAluno = Number(input_frequencia.value) 
+
+        if(notaAluno <0 || notaAluno >10){
+            alert(`Onde já se viu nota <0 ou >10?!`)
+                
+        
+         if (frequenciaAluno <0 || frequenciaAluno >100) {
+            alert(`"Onde já se viu frequência <0 ou >100?!`)
+                tentativas-=1
+                div_tentativas.innerHTML=`Você tem ${tentativas} tentativas`
+                
+                if(tentativas==0) {
+                    alert`Tentativas esgotadas`
+                    tentativas+=3
+                }
+        }}
+        else {
+
+        if(frequenciaAluno>=75) {
+                div_mensagem.innerHTML=`Aluno aprovado por frequencia` }
+        
+
+      else  if(frequenciaAluno<75) {
+                div_mensagem.innerHTML =`Aluno reprovado por frequencia`  }
+            
+
+       else  if(notaAluno >=0 && notaAluno <6) {
+            div_mensagem.innerHTML += `"Aluno ficou abaixo da média" <br>`
+
+        }
+
+        else if(notaAluno >=6 && notaAluno <=8) {
+            div_mensagem.innerHTML+=`Aluno ficou na média <br>`
+        }
+
+        else {
+            div_mensagem.innerHTML += `Aluno ficou acima da media <br>`
+
+           
+        }}
+
+       
+
+    }
+
+
+</script>

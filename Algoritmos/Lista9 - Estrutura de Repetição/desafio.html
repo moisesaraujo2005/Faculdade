@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o intervalo inicial :
+    <input type="number" id="input_inicial">
+
+    Insira o intervalo final :
+    <input type="number" id="input_final">
+
+    <button onclick="curto()">Curto 3 e 5</button>
+
+    <div id="div_mensagem">
+
+    </div>
+</body>
+</html>
+
+<script>
+
+    function curto() {
+        var intervaloInicial = Number(input_inicial.value) 
+        var intervaloFinal = Number(input_final.value) 
+
+        if(intervaloFinal<intervaloInicial || intervaloInicial == intervaloFinal) {
+            alert(`Erro!`)
+        }
+
+        else {
+
+            for(intervaloInicial; intervaloInicial<intervaloFinal; intervaloInicial++) {
+
+                if(intervaloInicial % 3 == 0 ) {
+                    div_mensagem.innerHTML+= `É TRI! <br>`
+                }
+
+                else if (intervaloInicial % 5 == 0) {
+                    div_mensagem.innerHTML += `É PENTA! <br>`
+                }
+
+                else if (intervaloInicial % 3 == 0 && intervaloInicial % 5 == 0) {
+                    div_mensagem.innerHTML += `É TRIPENTA! <br>`
+                }
+
+            }
+
+        }
+
+
+
+    }
+
+</script>

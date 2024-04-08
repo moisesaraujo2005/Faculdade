@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Selecione uma combo 
+    <select  id="select_combo">
+        <option value="1">Comum</option>
+        <option value="2">Estudante</option>
+        <option value="3">Idoso/PNE</option>
+    </select>
+
+    Selecione o tipo de passagem 
+    <select  id="select_tipo">
+        <option value="1">Passagem única</option>
+        <option value="2">Passagem integração</option>
+    </select>
+
+    <button onclick="preço()">Simular Preço</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function preço() {
+
+        var selecionarTipo = select_tipo.value 
+
+        var selectCombo = select_combo.value 
+
+        var passagem= 0;
+
+        if(selecionarTipo == '2' && selectCombo=='2') {
+
+         passagem  = 5.90*0.50
+
+            
+        }
+
+        else if (selecionarTipo=='1' && selectCombo == '2') {
+            passagem = 4.40*0.50
+        }
+
+        else if(selectCombo=='3' && (selecionarTipo =='1' || selecionarTipo =='2')) {
+            passagem=0;
+        }
+
+        else if(selectCombo=='1' && selecionarTipo=='1') {
+            passagem = 4.40;
+        }
+
+        else  {
+            passagem = 5.90
+        }
+
+        div_mensagem.innerHTML = `Valor da passagem escolhida: R$ ${passagem} `
+
+    }
+
+</script>
