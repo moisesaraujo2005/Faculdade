@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Pesquisar 
+    <input type="text" id="input_pesquisar">
+
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+
+    var lista = ['skate', 'adidas', 'nike']
+
+    function pesquisar() {
+        div_mensagem.innerHTML=``
+        var pesquisaUsuario = input_pesquisar.value 
+        var listaCompleta = lista.length 
+
+      
+
+     for(cont =1; cont<listaCompleta; cont++) {
+
+        var palavraAtual = lista[cont]
+
+        if(pesquisaUsuario==palavraAtual) {
+            div_mensagem.innerHTML= `Fruta encontrada`
+        }
+
+        else {
+            div_mensagem.innerHTML = `Fruta não encontrada`
+        }
+
+     }
+
+    }
+
+</script>

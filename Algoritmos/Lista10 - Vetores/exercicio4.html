@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Cadastrar filme : 
+    <input type="text" id="input_filme">
+    <button onclick="filme()">Cadastrar</button>
+
+    <button onclick="favoritos()">Favoritos</button>
+
+    <div id="div_mensagem"></div>
+</body> 
+</html>
+
+<script>
+
+    var listaFilmes = []
+    function filme() {
+        var filmes = input_filme.value
+
+        listaFilmes.push(filmes)
+    }
+
+    function favoritos() {
+        var filmes = input_filme.value
+        div_mensagem.innerHTML += `Total : ${listaFilmes.length} Filmes <br>`
+
+
+        div_mensagem.innerHTML += `Filme A  : ${[listaFilmes[0]]} <br>`
+
+        div_mensagem.innerHTML += `Filme B : ${listaFilmes[listaFilmes.length-1]} <br>`
+    }
+
+</script>

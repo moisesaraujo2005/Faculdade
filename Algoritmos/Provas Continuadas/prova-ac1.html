@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--Prova realizada por Moisés Silva, RA:-01232018  Dia : 11/03/2024-->
+
+    <!--Nota 9.5-->
+    <!--Dados Recebidos:-->
+    Insira a quantidade de energia consumida (kwH)
+    <input type="number" id="input_kwH"> <br>
+
+    Insira a bandeira tarifária :
+    <input type="text" id="input_bandeira"> <br>
+
+    Insira a quantidade de água consumida :
+    <input type="number" id="input_qtdAgua"> <br>
+
+    Insira a quantidade de vazamentos de água na casa : 
+    <input type="number" id="input_qtdVazamentos"> <br>
+
+    Insira a quantidade de gás consumida em litros (L) 
+    <input type="number" id="input_qtdGas"> <br>
+
+    Insira a quantidade de MB do plano de internet :
+    <input type="number" id="input_qtdMB"> <br>
+
+    Insira se há linha telefônica :
+    <input type="text" id="input_telefone"> <br>
+
+    <!--Botão Despesas-->
+    <button onclick="DespesasFixas()">Calcular Despesas Fixas</button> <br>
+
+    <!--Div Exibir Despesas-->
+    <div id="div_exibir">
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    
+    function DespesasFixas() {
+        
+        //Variaveis númericas
+        var qtdkwH = Number(input_kwH.value)
+        var aguaConsumida = Number(input_qtdAgua.value) 
+        var qtdVazamentos = Number(input_qtdVazamentos.value) 
+        var qtdGas = Number(input_qtdGas.value)
+        var qtdInternet = Number(input_qtdMB.value) 
+
+
+        //Variaveis de texto
+        var bandeira = input_bandeira.value
+        var linhaTelefone = input_telefone.value
+
+        //Variaveis calculadas
+        var valorBaseAgua = aguaConsumida*3.50
+        var valorBaseGas = qtdGas*2.50
+        var valorBaseInternet = qtdInternet*0.80
+        var valorTotalDespesas = 0;
+        var bandeiraVerde = qtdkwH*0.75
+        var bandeiraVermelha = qtdkwH*1
+        var bandeiraAmarela = qtdkwH*0.90
+        var acrescimo = qtdVazamentos*10 
+
+        //Validações:
+        if(qtdVazamentos>1) {
+            valorBaseAgua+=acrescimo
+
+        }
+
+        if(linhaTelefone=='sim') {
+
+            valorBaseInternet+=valorBaseInternet*0.25
+        }
+        if(linhaTelefone=='não') {
+            valorBaseInternet-=valorBaseInternet*0.075
+        }
+
+        if(qtdkwH<=50) {
+           bandeiraAmarela-= bandeiraAmarela*0.10
+           bandeiraVerde-= bandeiraVerde*0.10
+           bandeiraVermelha-= bandeiraVermelha*0.10
+        }
+
+        if(bandeira=='verde') {
+           //var valorqtdkwHVerde = qtdkwH*0.75
+           var valorTotalDespesasVerde= valorBaseAgua+bandeiraVerde+valorBaseInternet+valorBaseGas
+
+            //Mensagem bandeira verde:
+           div_exibir.innerHTML = `
+           Com o consumo de ${qtdkwH} kWh na bandeira ${bandeira}, a conta de energia totaliza R$ ${bandeiraVerde}. 
+        Com o consumo de ${aguaConsumida} litros de água contendo ${qtdVazamentos} vazamentos, a conta de água totaliza R$ ${valorBaseAgua}. 
+        Com o consumo de ${qtdGas} litros de gás, a conta de gás totaliza R$ ${valorBaseGas}. 
+        Com o consumo de ${qtdInternet} MB de internet, o valor do plano de internet/telefone totaliza R$ ${valorBaseInternet}. 
+        Gasto total de despesas mensal: R${valorTotalDespesasVerde} .
+
+        `
+        }
+
+        if(bandeira=='amarela') {
+            //var valorqtdkwHAmarela = qtdkwH*0.90
+            var valorTotalDespesasAmarela= valorBaseAgua+bandeiraAmarela+valorBaseInternet+valorBaseGas
+
+             //Mensagem bandeira amarela:
+            div_exibir.innerHTML = `
+            Com o consumo de ${qtdkwH} kWh na bandeira ${bandeira}, a conta de energia totaliza R$ ${bandeiraAmarela}. 
+        Com o consumo de ${aguaConsumida} litros de água contendo ${qtdVazamentos} vazamentos, a conta de água totaliza R$ ${valorBaseAgua}. 
+        Com o consumo de ${qtdGas} litros de gás, a conta de gás totaliza R$ ${valorBaseGas}. 
+        Com o consumo de ${qtdInternet} MB de internet, o valor do plano de internet/telefone totaliza R$ ${valorBaseInternet}. 
+        Gasto total de despesas mensal: R${valorTotalDespesasAmarela} .
+
+        `
+        }
+
+        if(bandeira=='vermelha') {
+          // var valorqtdkwHVermelha=  qtdkwH*1
+           var valorTotalDespesasVermelha= valorBaseAgua+bandeiraVermelha+valorBaseInternet+valorBaseGas
+
+           //Mensagem bandeira vermelha:
+            div_exibir.innerHTML = `
+        Com o consumo de ${qtdkwH} kWh na bandeira ${bandeira}, a conta de energia totaliza R$ ${bandeiraVermelha}. 
+        Com o consumo de ${aguaConsumida} litros de água contendo ${qtdVazamentos} vazamentos, a conta de água totaliza R$ ${valorBaseAgua}. 
+        Com o consumo de ${qtdGas} litros de gás, a conta de gás totaliza R$ ${valorBaseGas}. 
+        Com o consumo de ${qtdInternet} MB de internet, o valor do plano de internet/telefone totaliza R$ ${valorBaseInternet}. 
+        Gasto total de despesas mensal: R${valorTotalDespesasVermelha} .
+
+        `
+        }
+    
+
+     
+
+
+
+
+
+    }
+</script>

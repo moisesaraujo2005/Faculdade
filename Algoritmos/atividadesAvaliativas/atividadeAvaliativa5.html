@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Episodio que deseja começar assistindo 
+    <input type="number" id="input_episodio">
+    <br>
+    Quantidade de tempo disponivel:
+    <input type="number" id="input_tempo"> 
+    <br> 
+    Unidade de tempo em :
+    <select id="select_tempo">
+        <option value="">Selecione</option>
+        <option value="horas">Horas</option>
+        <option value="minuto">Minutos</option>
+    </select>
+    <br>
+    Pular abertura? 
+    <select  id="select_abertura">
+        <option value="">Selecione</option>
+        <option value="simAbertura">sim</option>
+        <option value="nãoAbertura">não</option>
+    </select>
+    <br>
+    Pular encerramento? 
+    <select  id="select_encerramento">
+        <option value="">Selecione</option>
+        <option value="simEncerramento">Sim</option>
+        <option value="nãoEncerramento">Não</option>
+    </select>
+    <br>
+
+    <button onclick="episodios()">Assistir episódios</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function episodios() {
+
+        var episodios = Number(input_episodio.value) 
+        var tempo = Number(input_tempo.value)
+        var selectTempo = select_tempo.value 
+        var selectAbertura = select_abertura.value 
+        var selectEncerramento = select_encerramento.value 
+       
+        var tempoDisponivel = tempo
+      
+      
+      
+        if(episodios <1 || episodios>1100) {
+            alert(`Episódios inválidos`)
+        }
+        else {
+
+            if(selectTempo=='horas') {
+                tempoDisponivel*=60                
+            }
+            var qtdTempo = 24
+
+            if(selectAbertura=='simAbertura') {
+                qtdTempo-=2
+            }
+
+            if(selectEncerramento=='simEncerramento') {
+                qtdTempo-=2
+            }
+
+            var tempoAssistido = tempoDisponivel/qtdTempo
+
+                for(; tempoDisponivel>0; episodios++) {
+
+                    div_mensagem.innerHTML += `Episodio : ${episodios} <br>`
+                    
+                    for(var cont = 1; cont<=qtdTempo; cont++) {
+                        if(tempoDisponivel>0) {
+                            
+                            if(selectAbertura=='nãoAbertura' && cont <=2) {
+                            div_mensagem.innerHTML+= `Minuto ${cont} Abertura <br>`
+                        }
+
+                        else if(cont<=qtdTempo) {
+                            div_mensagem.innerHTML+= `Minuto ${cont} Assistido o episódio <br>`
+                        }
+                        else if(selectEncerramento=='nãoEncerramento'){
+                            div_mensagem.innerHTML+= `Minuto ${cont} Encerramento <br>`
+
+                        }
+                        else {
+                            div_mensagem.innerHTML+=`Minuto ${cont} Assistindo o episódio <br>`
+                        
+                         
+                    }
+                        }
+                        tempoDisponivel--
+                     }
+                     
+                     
+                }
+                div_mensagem.innerHTML+= `Fim dos episódios! <br> 
+                     Foram assistidos ${tempoAssistido}<br>`
+            }
+
+
+        }
+
+    
+
+</script>

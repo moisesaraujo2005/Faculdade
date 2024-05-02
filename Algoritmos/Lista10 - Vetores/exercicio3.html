@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o bairro :
+    <input type="text" id="input_bairro">
+    <button onclick="cadastrar()">Cadastrar bairro</button>
+    Número bairro :
+    <input type="text" id="input_numero">
+
+    <button onclick="moradia()">Relembrar moradia</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+
+    var listaMoradias = []
+
+    function cadastrar() {
+        var bairro = input_bairro.value 
+
+        listaMoradias.push(bairro)
+
+    }
+
+    function moradia() {
+        var numero = Number(input_numero.value) 
+        var bairro = input_bairro.value 
+        
+        if(listaMoradias[numero]) {
+            div_mensagem.innerHTML = `Bairro : ${listaMoradias[numero]}`
+        }
+
+        else {
+            div_mensagem.innerHTML = `Você ainda não morou em ${bairro}`
+        }
+    }
+
+</script>

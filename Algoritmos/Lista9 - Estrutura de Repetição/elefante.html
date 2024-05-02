@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 27</title>
+</head>
+
+<body>
+    Quantidade de elefantes:
+
+     <input id="qtd_elefantes" type="number"><br>
+
+    <button onclick="exibir()">Atazanar a médium</button>
+  
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function exibir() {
+        div_mensagem.innerHTML=``
+        var qtdElefantes = Number(qtd_elefantes.value);
+     
+        var Incomodam = 'incomodam, '
+
+        div_mensagem.innerHTML = ``;
+
+        for (var contador=2; contador <= qtdElefantes; contador++) {
+
+            Incomodam += 'incomodam, ';
+            
+            div_mensagem.innerHTML += `1 elefante incomoda muita gente!<br>`;
+            div_mensagem.innerHTML += `${contador} elefantes ${Incomodam} muito mais<br>`;
+
+          
+        }
+
+
+    }
+</script>

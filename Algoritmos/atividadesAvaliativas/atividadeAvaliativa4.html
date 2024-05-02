@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o episódio que deseja comaçar a assistir: 
+    <input type="number" id="input_episodio">
+    <br>
+    Insira a quantidade de tempo disponível: 
+    <input type="number" id="input_tempo">
+    <br>
+    Unidade de tempo em: 
+    <select  id="select_tempo">
+        <option value="">Selecione uma opção</option>
+        <option   value="horas">Horas</option>
+        <option  value="minutos">Minutos</option>
+    </select>
+    <br> 
+    Pular abertura? 
+    <select  id="select_abertura">
+        <option value="">Selecione uma opção</option>
+        <option value="simAbertura">Sim</option>
+        <option value="nãoAbertura">Não</option>
+    </select>
+    <br> 
+    Pular encerramento? 
+    <select  id="select_encerramento">
+        <option value="">Selecione uma opção</option>
+        <option value="simEncerramento">Sim</option>
+        <option value="nãoEncerramento">Não</option>
+    </select>
+    <br>
+    <button onclick="episodio()">Assistir Episódios</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    var reset=0
+
+    function episodio() {
+
+        var episodio = Number(input_episodio.value) 
+        var tempo = Number(input_tempo.value)
+        var unidadeTempo = select_tempo.value
+        var abertura = select_abertura.value 
+        var encerramento = select_encerramento.value 
+
+      
+        var calculoHora = 60*tempo
+        var episodioAssistido = tempo/24
+        
+
+        if(episodio<1  || episodio > 1100) {
+            alert(`“O número do episódio é inválido”`)
+        }
+        else {
+
+            if(unidadeTempo == 'horas' && abertura == 'simAbertura' && encerramento =='simEncerramento') {
+
+                for(var cont =1; cont<calculoHora; cont++) {
+                    
+                 
+                if(cont>=1 &&  cont<2) {
+                    div_mensagem.innerHTML+= `Minuto ${cont}: Abertura do Episódio <br>`
+                }
+                else if(cont>2 && cont <=22) {
+                    div_mensagem.innerHTML+= `Minuto ${cont}: Assistindo o Episódio <br>`
+                }
+
+                else if(cont>22 && cont <=24) {
+                    div_mensagem.innerHTML+= `Minuto ${cont}: Encerramento do Episódio <br>`
+                  
+
+                }
+                else {
+                    
+                }
+              
+
+                }
+                div_mensagem.innerHTML+= `Foram assistidos : ${episodioAssistido} episódios`}
+
+
+            else {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                div_mensagem.innerHTML+= `Episódio: ${episodio} <br>`
+
+            for(var cont = 1;  cont<=tempo; cont++) {
+
+              
+                if(cont==1 ||  cont==2) {
+                    div_mensagem.innerHTML+= `Minuto ${cont}: Abertura do Episódio <br>`
+                }
+                else if(cont>2 && cont <=22) {
+                    div_mensagem.innerHTML+= `Minuto ${cont}: Assistindo o Episódio <br>`
+                }
+
+                else {
+                    div_mensagem.innerHTML+= `Minuto ${cont}: Encerramento do Episódio <br>`
+                }
+
+            }
+            div_mensagem.innerHTML+= `Foram assistidos : ${episodioAssistido} episódios`
+
+            for(var cont = 1;  cont<episodio; cont++) {
+
+            }
+
+        }
+        }
+
+
+    }
+
+</script>

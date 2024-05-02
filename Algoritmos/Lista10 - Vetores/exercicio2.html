@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    Destino viagem :
+    <input type="text" id="input_viagem">
+
+    Adicionar :
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="primeira()">Primeira viagem</button>
+    <button onclick="terceira()">terceira viagem</button>
+    <button onclick="ultima()">ultima viagem</button>
+
+    <div id="div_mensagem">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var listaViagens = []
+    function adicionar() {
+        var destinoViagem = input_viagem.value
+        listaViagens.push(destinoViagem)
+
+    }
+
+    function primeira() {
+
+        if (listaViagens[0]) {
+            div_mensagem.innerHTML = `Primeira viagem : ${listaViagens[0]}`
+        }
+
+        else {
+            div_mensagem.innerHTML = `Viagem não cadastrada`
+        }
+
+    }
+
+    function terceira() {
+
+        if (listaViagens[2]) {
+            div_mensagem.innerHTML = `Terceira viagem : ${listaViagens[2]}`
+        }
+
+        else {
+            div_mensagem.innerHTML = `Viagem não cadastrada`
+        }
+
+    }
+
+    function ultima() {
+
+        if (listaViagens.length - 1) {
+            div_mensagem.innerHTML = `Ultima viagem : ${listaViagens.length}`
+        }
+
+        else {
+            div_mensagem.innerHTML = `Viagem não cadastrada`
+        }
+
+    }
+
+</script>
