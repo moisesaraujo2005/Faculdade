@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite o nome da linha de ônibus :
+    <input type="text" id="input_linha">
+
+    <button onclick="onibus()">Mostrar linha de ônibus</button>
+    Pesquisar linha :
+    <input type="text" id="input_pesquisar">
+    <button onclick="pesquisar()">pesquisar</button>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var lista_onibus = []
+
+    function onibus() {
+        div_msg.innerHTML = ``
+        var linhaOnibus = input_linha.value
+
+        lista_onibus.push(linhaOnibus)
+
+        for (var index = lista_onibus.length - 1; index >= 0; index--) {
+            var element = lista_onibus[index];
+            div_msg.innerHTML += `${element}<br>`
+
+        }
+
+    }
+
+    function pesquisar() {
+        var contagem = 0
+        var listaPesquisar = []
+        var pesquisar = input_pesquisar.value
+
+        for (i = 0; i < lista_onibus.length; i++) {
+
+
+
+            if (lista_onibus[i] == pesquisar) {
+                contagem += 1
+                listaPesquisar.push(i+1)
+            }
+
+            if (contagem >= 1) {
+            div_msg.innerHTML = `Você já foi ${contagem} vezes pra essa linha, nessa ordem ${listaPesquisar} `
+          
+        }
+        else {
+            div_msg.innerHTML = `Você não andou nessa linha`
+        }
+
+        }
+    
+    }
+
+</script>

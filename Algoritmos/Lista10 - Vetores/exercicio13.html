@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Indique o resultado (Vitoria, Empate ou Resultado)
+    <input type="text" id="input_resultado">
+
+    <button onclick="registrar()">Registrar jogo</button>
+
+    Indique qual jogo deseja saber o resultado 
+    <input oninput="input()" type="number" id="input_jogoEscolhido">
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+
+
+
+    var listaResultados = []
+    function registrar() {
+        div_msg.innerHTML=``
+
+        var contagemVitorias = 0
+        var contagemEmpates =0 
+        var contagemDerrotas =0 
+        var pontos = 0
+        var resultado = input_resultado.value 
+
+        if(resultado!== 'Vitoria'  && resultado!=='Empate'  && resultado!=='Derrota') {
+            alert(`Tem que ser vitoria, empate ou derrota!`)
+        }
+        else {
+        listaResultados.push(resultado)
+
+        for (var i  = 0; i  < listaResultados.length; i ++) {
+            var element = listaResultados[i];
+
+            if(element == 'Vitoria') {
+                contagemVitorias+=1
+                pontos+=3
+            }
+
+            else if(element == 'Empate'){
+                contagemEmpates +=1
+                pontos+=1
+            }
+
+          else {
+            contagemDerrotas+=1
+            pontos+=0
+          }
+
+                    }
+
+                    var Aproveitamento = pontos/listaResultados.length
+
+
+
+
+                    div_msg.innerHTML += `  O time teve: ${contagemVitorias} vitórias, ${contagemEmpates} empates, ${contagemDerrotas} derrotas   <br>
+
+Pontuação total: ${pontos} pontos <br>
+
+Aproveitamento: ${Aproveitamento}%  
+
+                `    }}
+        
+             
+    function input() {
+        div_msg.innerHTML=``
+        var jogoEscolhido = Number(input_jogoEscolhido.value) -1
+    
+
+     
+        
+        
+            if(listaResultados[jogoEscolhido] == undefined) {
+                div_msg.innerHTML = `Esse jogo não foi cadastrado ${jogoEscolhido+1}`
+            }
+            else {
+              
+                div_msg.innerHTML= `  No ${jogoEscolhido+1} jogo, o time ${listaResultados[jogoEscolhido]}` 
+            }
+        }
+        
+           
+        
+      
+          
+       
+     
+       
+
+        
+
+        
+     
+        
+       
+    
+
+        
+
+    
+</script>
