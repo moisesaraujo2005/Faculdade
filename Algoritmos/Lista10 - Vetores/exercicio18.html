@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe o nome das músicas que você mais gosta:
+    <input type="text" id="input_musicas">
+    <button onclick="adicionarMusica()">Cadastrar</button>
+    <button onclick="musica()">Exibir</button>
+    De :
+    <input type="text" id="input_de">
+    Até :
+    <input type="text" id="input_ate">
+    <Button onclick="filtrar()">Filtrar</Button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+
+    var lista_musicas = []
+    function adicionarMusica() {
+        var Musicas = input_musicas.value
+
+        lista_musicas.push(Musicas)
+
+    }
+    function musica() {
+        div_msg.innerHTML = ``
+
+
+        for (var i = 0; i < lista_musicas.length; i++) {
+            var element = lista_musicas[i];
+
+            div_msg.innerHTML += `${element} <br>`
+
+        }
+
+    }
+    function filtrar() {
+        div_msg.innerHTML = ``
+        var de = Number(input_de.value)
+        var ate = Number(input_ate.value)
+
+        for (var i = de - 1; i < ate; i++) {
+
+            var conteudo = lista_musicas[i]
+
+            div_msg.innerHTML += `${conteudo} <br>`
+
+        }
+    }
+
+</script>

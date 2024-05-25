@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do produto :
+    <input type="text" id="input_produto"> <br>
+
+    Preço da compra :
+    <input type="number" id="input_compra"> <br>
+
+    <button onclick="cadastro()">Cadastrar</button>
+    <button onclick="estoque()">Relatorio estoque</button>;
+
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+
+
+    var listaProdutos = [];
+    var listaPreco = [];
+
+    function cadastro() {
+        var produtos = input_produto.value;
+        var preços = Number(input_compra.value);
+
+        listaPreco.push(preços);
+        listaProdutos.push(produtos);
+
+
+    }
+
+
+    function estoque() {
+
+        var total = 0 
+        var produtoMaior = listaProdutos[0]
+        var produtoMenor = listaProdutos[0]
+        var maiorpreço = listaPreco[0]
+        var menorpreço = listaPreco[0]
+        div_msg.innerHTML+=`Total produtos : ${listaProdutos.length} <br>`
+
+            for (var i = 0; i < listaProdutos.length; i++) {
+                
+
+                
+                var elementProdutos = listaProdutos[i];
+                var elementPreço = listaPreco[i]
+                var preço = elementPreço * 0.25;
+                total+=elementPreço
+
+                if(elementPreço< menorpreço) {
+                    menorpreço = elementPreço
+                    produtoMenor = listaProdutos[i]
+                }
+
+                if(elementPreço > maiorpreço) {
+                    maiorpreço = elementPreço
+                    produtoMaior= listaProdutos[i]
+
+                }
+                  
+        div_msg.innerHTML += `
+        Produto ${i+1} : ${elementProdutos} <br>
+        Preço de compra ${elementPreço} Vender por ${elementPreço + preço} <br> 
+        ` ;
+            }
+
+      div_msg.innerHTML+= `  Total preço:  ${total} <br>
+        Média preço dos produtos ${total/listaProdutos.length} <br>
+        Produto mais caro : ${produtoMaior} <br>
+        Produto mais barato : ${produtoMenor}`
+
+    }
+
+</script>

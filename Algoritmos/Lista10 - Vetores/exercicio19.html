@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome de cada filme que você já viu na vida: 
+    <input type="text" id="input_filme">
+    <button onclick="filmeCadastro()">Cadastrar</button>
+    <button onclick="ordemInversa()">Listar filmes</button>
+    Minimo :
+    <input type="number" id="input_minimo">
+    Máximo :
+    <input type="number" id="input_maximo">
+    <Button onclick="filtro()">filtrar filmes</Button>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+
+    var lista_filmes = []
+
+    function filmeCadastro() {
+        div_msg.innerHTML=``
+        var filmes = input_filme.value
+
+        lista_filmes.push(filmes)
+
+        div_msg.innerHTML += `Você já assistiu o total de ${lista_filmes.length} filmes`
+    }
+
+    function ordemInversa() {
+        div_msg.innerHTML=``
+        for(var i = lista_filmes.length-1; i>=0; i--) {
+            var element = lista_filmes[i]
+
+            div_msg.innerHTML += `${element} <br>`
+        } }
+
+    function filtro () {
+        div_msg.innerHTML=``
+        var minimo = Number(input_minimo.value) 
+        var maximo = Number(input_maximo.value)
+
+        for(var i =maximo; i>=minimo; i--) {
+            var element2 = lista_filmes[i-1]
+
+            div_msg.innerHTML+= `${element2} <br>`
+        }
+    }
+    
+
+</script>

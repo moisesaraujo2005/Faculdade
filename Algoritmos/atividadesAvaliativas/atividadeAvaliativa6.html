@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="desaparecer">
+        Insira o nome :
+        <input type="text" id="input_nome"> <br>
+        Insira o peso :
+        <input type="number" id="input_peso"> <br>
+        Insira o preço (em kg)
+        <input type="number" id="input_precoKG"> <br>
+        <button onclick="ingredienteBlend()">Adicionar Ingrediente no Blend</button> <br>
+
+        Insira o nome do hamburguer para o blend
+        <input type="text" id="input_hamburguer"> <br>
+
+        <button onclick="prepararBlend()">Preparar blend e registra</button> <br>
+        <div style="font-size: 19px;" id="div_msg"></div>
+    </div>
+    <button onclick="cardapio()">Montar Cardápio de lanches</button>
+    <div id="aparecer">
+        Tipo Hamburguer :
+        <input type="text" id="input_tipoHamburguer"> <br>
+        Quantidade de hamburgueres :
+        <input type="number" id="input_qtdHamburguer"> <br>
+        Tipo de queijo:
+        <select id="select_queijo">
+            <option value="sem">Sem queijo</option>
+            <option value="Mussarela">Mussarela</option>
+            <option value="Prato">Prato</option>
+            <option value="Cheddar">Cheddar</option>
+        </select> <br>
+
+        Cebola
+        <select id="select_cebola">
+            <option value="#">Selecione uma opção</option>
+            <option value="sim">Sim</option>
+            <option value="Não">Não</option>
+        </select> <br>
+        Alface
+        <select id="select_alface">
+            <option value="#">Selecione uma opção</option>
+            <option value="sim">Sim</option>
+            <option value="Não">Não</option>
+        </select> <br>
+        Tomate
+        <select id="select_tomate">
+            <option value="#">Selecione uma opção</option>
+            <option value="sim">Sim</option>
+            <option value="não">Não</option>
+        </select> <br>
+        <button onclick="lanche()">Adicionar lanche ao cardapio</button>
+        <div id="div_cardapio">
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+
+<script>
+
+    aparecer.style.display = 'none'
+    var lista_nome = []
+    var lista_peso = []
+    var lista_preço = []
+
+
+    function ingredienteBlend() {
+        aparecer.style.display = 'none'
+        var nome = input_nome.value
+        var peso = Number(input_peso.value)
+        var preço = Number(input_precoKG.value)
+
+        if (nome == '' || peso == '' || preço == '') {
+            alert(`Campos vazios, insira dados!`)
+        }
+
+        else if (lista_nome.length < 0) {
+            alert(`Insira algum dado no campo nome!`)
+        }
+
+        else {
+            alert(`Itens cadastrados com sucesso!`)
+            lista_nome.push(nome)
+            lista_peso.push(peso)
+            lista_preço.push(preço)
+        }
+
+    }
+
+    var nome_hamburguer = []
+    var peso_hamburguer = []
+    var preço_hamburguer = []
+    function prepararBlend() {
+        aparecer.style.display = 'none'
+        div_msg.innerHTML = ``
+        var pesoTotal = 0
+        var preçoFinal = 0
+        var hamburguer = input_hamburguer.value
+        var totalPreço = 0
+        if (hamburguer == '') {
+            alert(`Insira algum dado no campo hamburguer`)
+        }
+
+        else if (lista_nome.length < 2) {
+            alert(`Insira pelo menos dois ingredientes!`)
+        }
+
+        else {
+            div_msg.innerHTML += `<h2> PREPARANDO NOVO HAMBURGUER</h2> <br>`
+            for (var i = 0; i < lista_nome.length; i++) {
+                var element = lista_nome[i];
+                totalPreço += (lista_peso[i] * lista_preço[i]) / 1000
+                preçoFinal += totalPreço
+                pesoTotal += lista_peso[i]
+                div_msg.innerHTML += `  
+                    ${i + 1} – Ingrediente: ${element} – Peso: ${lista_peso[i]} - Preço KG: ${lista_preço[i]} - Preço Final: ${totalPreço} <br>  
+
+
+
+         `
+                totalPreço = 0
+            }
+
+
+            div_msg.innerHTML += `       <h3> INFORMAÇÕES DO HAMBURGUER REGISTRADO NO CATÁLOGO: </h3> 
+        Nome:${hamburguer} <br>
+        Peso Total: ${pesoTotal}g  <br>
+        Preço Total: ${preçoFinal}R$ <br> `
+
+        }
+
+        nome_hamburguer.push(hamburguer)
+        peso_hamburguer.push(pesoTotal)
+        preço_hamburguer.push(preçoFinal)
+
+    }
+
+    function cardapio() {
+
+        if (nome_hamburguer.length < 0 || peso_hamburguer.length < 0 || preço_hamburguer.length < 0) {
+            alert(`Insira algum blend!`)
+        }
+        else {
+            aparecer.style.display = 'block'
+            desaparecer.style.display = 'none'
+
+        }
+    }
+
+    function lanche() {
+        div_cardapio.innerHTML = ``
+        var tipoHambuguer = input_tipoHamburguer.value
+        var qtdHambuerguer = Number(input_qtdHamburguer.value)
+        var selectQueijo = select_queijo.value
+        var selectCebola = select_cebola.value
+        var selectAlface = select_alface.value
+        var selectTomate = select_tomate.value
+        var adicionalPreço = 0
+       
+
+        for (var i = 0; i < nome_hamburguer.length; i++) {
+            var element = nome_hamburguer[i];
+        }
+
+        if (tipoHambuguer != element) {
+            div_cardapio.innerHTML = `O hamburguer '${tipoHambuguer}' não existe no catálogo de hamburgueres`
+        }
+
+        else {
+
+            if (qtdHambuerguer < 0) {
+                div_cardapio.innerHTML = `A quantidade de hamburguer deve ser maior que 0`
+            }
+
+            else {
+
+
+                if (selectQueijo == 'Mussarela') {
+                    adicionalPreço += 2
+                }
+
+                else if (selectQueijo == 'Prato') {
+                    adicionalPreço += 2.5
+                }
+                else if (selectQueijo == 'Cheddar') {
+                    adicionalPreço += 3
+                }
+
+                else {
+                    adicionalPreço += 0
+                }
+
+
+                if (selectCebola == 'sim') {
+                    adicionalPreço += 1.5
+                }
+                else {
+                    adicionalPreço += 0
+                }
+
+                if (selectAlface == 'sim') {
+                    adicionalPreço += 1.75
+                }
+                else {
+                    adicionalPreço += 0
+                }
+
+                if (selectTomate == 'sim') {
+                    adicionalPreço += 2
+
+
+                }
+
+                else {
+                    adicionalPreço += 0
+                }
+            }
+
+
+           div_cardapio.innerHTML += `
+           Tipo Hamburguer: ${nome_hamburguer}  (${peso_hamburguer}g / R$${preço_hamburguer}) <br>
+         Quantidade de Hamburgueres: ${qtdHambuerguer} x <br>
+         Queijo: ${selectQueijo} <br>
+         Cebola: ${selectCebola} <br>  
+         Alface: ${selectAlface} <br>
+         Tomate: ${selectTomate}  <br>
+         Preço Final do Lanche: R$${(preço_hamburguer*qtdHambuerguer) + adicionalPreço} `
+
+        }
+
+    }
+
+
+
+
+</script>

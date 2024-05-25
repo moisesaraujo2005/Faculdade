@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o nome do produto :
+    <input type="text" id="input_produto"> <br>
+    Insira o preço do produto:
+    <input type="number" id="input_preco"> <br>
+    <button onclick="cadastrarProduto()">Cadastrar</button>
+    <button onclick="estoque()">Atualizar Estoque</button>
+    <select  id="select_preço">
+        <option value="#">Selecione uma opção</option>
+        <option value="Acima">Preços Acima</option>
+        <option value="Abaixo">Preços Abaixo</option>
+    </select>
+    Valor:
+    <input type="number" id="input_valor">
+    <button onclick="filtrar()">Filtrar Produto</button>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+
+    var lista_produtos = []
+    var lista_preços = []
+
+    function cadastrarProduto () {
+        div_msg.innerHTML=``
+        var produto = input_produto.value
+        var preço = Number(input_preco.value)
+
+        if(produto.length <=3 && preço <0) {
+               alert(`Nome tem que conter mais que letra e preço tem que ser positivo`) 
+        }
+
+        else {
+
+            lista_produtos.push(produto)
+            lista_preços.push(preço)
+            div_msg.innerHTML += `Produtos cadastrado com sucesso!`
+        }
+
+    }
+
+    function estoque() {
+        var total = 0
+        div_msg.innerHTML=``
+        for (var i  = 0; i  < lista_produtos.length; i ++) {
+            var element = lista_produtos[i];
+            total+= lista_preços[i]
+            div_msg.innerHTML+= `
+               
+    ${i+1}. ${lista_produtos[i]} - R$${lista_preços[i]} <br>
+            `
+        }
+
+        div_msg.innerHTML+= ` Você tem ${lista_produtos.length} produtos cadastrados em estoque <br> Seu estoque vale R$ ${total} <br>`
+    }
+
+    function filtrar() {
+        div_msg.innerHTML=``
+        var selectPreço = select_preço.value 
+        var valorProduto = Number(input_valor.value) 
+
+        if(selectPreço == 'Acima') {
+            for (var i  = 0; i  < lista_preços.length; i ++) {
+                var element = lista_preços[i];
+
+                if(element > valorProduto) {
+                    div_msg.innerHTML += `${lista_produtos[i]} <br>`
+                }
+                
+            }
+        }
+
+        else {
+            for (var i  = 0; i  < lista_preços.length; i ++) {
+                var element = lista_preços[i];
+
+                if(element < valorProduto) {
+                    div_msg.innerHTML+= `${lista_produtos[i]} <br>`
+                }
+                
+            }
+        }
+
+    }
+
+</script>
